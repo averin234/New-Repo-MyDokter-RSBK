@@ -97,6 +97,7 @@ class API {
   static const _editVitalSign = "$_baseUrl/edit-vital-sign.php";
   static const _getResep = "$_baseUrl/get-resep.php";
   static const _getObatTindakan = "$_baseUrl/get-obat-tindakan.php";
+  static const _getKonsultasi = "$_baseUrl/get-konsultasi.php";
   static const _getReferensi = "$_baseUrl/get-referensi.php";
   static const _getTindakan = "$_baseUrl/get-tindakan.php";
   static const _postTindakan = "$_baseUrl/post-tindakan.php";
@@ -1541,6 +1542,36 @@ class API {
     };
     var response = await Dio().post(
       _getObatTindakan,
+      options: Options(
+        headers: {
+          "Content-Type": "application/json",
+          "X-Api-Token": token.token,
+        },
+      ),
+      data: data,
+    );
+    final datas = jsonDecode(response.data);
+    final obj = ListData.fromJson(datas);
+    if (obj.msg == "Invalid token: Expired") {
+      Get.offAllNamed(Routes.LOGIN);
+      Get.snackbar(
+        obj.code.toString(),
+        obj.msg.toString(),
+      );
+    }
+    print(obj.toJson());
+    return obj;
+  }
+  
+  static Future<ListData> getKonsultasi({
+    required String kode_dokter,
+  }) async {
+    var token = Publics.controller.getToken.value;
+    final data = {
+      "kd": kode_dokter,
+    };
+    var response = await Dio().post(
+      _getKonsultasi,
       options: Options(
         headers: {
           "Content-Type": "application/json",
