@@ -2,6 +2,7 @@ import "dart:convert";
 import "dart:io";
 import "package:mydokter_rsbk/app/data/componen/data_regist_model.dart";
 import "package:mydokter_rsbk/app/data/componen/publics.dart";
+import "package:mydokter_rsbk/app/data/model/assesment_perawat_hd.dart";
 import "package:mydokter_rsbk/app/data/model/checkup.dart";
 import "package:mydokter_rsbk/app/data/model/get_antrian_dokter.dart";
 import "package:mydokter_rsbk/app/data/model/get_antrian_pasien.dart";
@@ -22,6 +23,7 @@ import "package:get/get.dart";
 import "package:http/http.dart" as http;
 import "package:intl/intl.dart";
 import "package:path_provider/path_provider.dart";
+import "../../modules/detail_antrian/views/componen/soap/assestment.dart";
 import "../model/get_detail_dokter.dart";
 import "../model/get_nama_obat.dart";
 import "../model/get_racikan.dart";
@@ -97,6 +99,7 @@ class API {
   static const _editVitalSign = "$_baseUrl/edit-vital-sign.php";
   static const _getResep = "$_baseUrl/get-resep.php";
   static const _getObatTindakan = "$_baseUrl/get-obat-tindakan.php";
+  static const _postAssesmentPerawatHd = "$_baseUrl/post-assesment-perawat-hd.php";
   static const _getKonsultasi = "$_baseUrl/get-konsultasi.php";
   static const _getReferensi = "$_baseUrl/get-referensi.php";
   static const _getTindakan = "$_baseUrl/get-tindakan.php";
@@ -112,7 +115,7 @@ class API {
   static Future<Token> getToken() async {
     var response = await Dio().post(
       _getToken,
-      data: {"KeyCode": "MeTiRs", "v": "1.0"},
+      data: {"KeyCode": "MeTiRs", "v": "2.0"},
     );
     final data = jsonDecode(response.data);
     final obj = Token.fromJson(data);
@@ -259,6 +262,38 @@ class API {
     };
     var response = await Dio().post(
       _postIcd10,
+      options: Options(
+        headers: {
+          "Content-Type": "application/json",
+          "X-Api-Token": token.token,
+        },
+      ),
+      data: data,
+    );
+    final datas = jsonDecode(response.data);
+    final obj = CheckUp.fromJson(datas);
+    if (obj.msg == "Invalid token: Expired") {
+      Get.offAllNamed(Routes.LOGIN);
+      Get.snackbar(
+        obj.code.toString(),
+        obj.msg.toString(),
+      );
+    }
+    print(obj.toJson());
+    return obj;
+  }
+
+  static Future<CheckUp> postAssesmentPerawatHD({
+    required String no_kunjungan,
+    required AssestmentPerawatHD assesment,
+  }) async {
+    var token = Publics.controller.getToken.value;
+    final data = {
+      "nk": no_kunjungan,
+      "content": assesment.toJson(),
+    };
+    var response = await Dio().post(
+      _postAssesmentPerawatHd,
       options: Options(
         headers: {
           "Content-Type": "application/json",
