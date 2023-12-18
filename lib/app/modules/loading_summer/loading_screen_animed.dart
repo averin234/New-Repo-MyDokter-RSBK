@@ -1,9 +1,10 @@
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 
 class Loading extends StatefulWidget {
+  const Loading({super.key});
+
   @override
   _LoadingState createState() => _LoadingState();
 }
@@ -29,7 +30,7 @@ class _LoadingState extends State<Loading> with TickerProviderStateMixin {
     super.initState();
 
     firstController =
-        AnimationController(vsync: this, duration: Duration(seconds: 6));
+        AnimationController(vsync: this, duration: const Duration(seconds: 6));
     firstAnimation = Tween<double>(begin: -pi, end: pi).animate(firstController)
       ..addListener(() {
         setState(() {});
@@ -43,7 +44,7 @@ class _LoadingState extends State<Loading> with TickerProviderStateMixin {
       });
 
     secondController =
-        AnimationController(vsync: this, duration: Duration(seconds: 3));
+        AnimationController(vsync: this, duration: const Duration(seconds: 3));
     secondAnimation =
     Tween<double>(begin: -pi, end: pi).animate(secondController)
       ..addListener(() {
@@ -58,7 +59,7 @@ class _LoadingState extends State<Loading> with TickerProviderStateMixin {
       });
 
     thirdController =
-        AnimationController(vsync: this, duration: Duration(seconds: 2));
+        AnimationController(vsync: this, duration: const Duration(seconds: 2));
     thirdAnimation = Tween<double>(begin: -pi, end: pi).animate(thirdController)
       ..addListener(() {
         setState(() {});
@@ -72,7 +73,7 @@ class _LoadingState extends State<Loading> with TickerProviderStateMixin {
       });
 
     fourthController = AnimationController(
-        vsync: this, duration: Duration(milliseconds: 1500));
+        vsync: this, duration: const Duration(milliseconds: 1500));
     fourthAnimation =
     Tween<double>(begin: -pi, end: pi).animate(fourthController)
       ..addListener(() {
@@ -87,7 +88,7 @@ class _LoadingState extends State<Loading> with TickerProviderStateMixin {
       });
 
     fifthController =
-        AnimationController(vsync: this, duration: Duration(seconds: 1));
+        AnimationController(vsync: this, duration: const Duration(seconds: 1));
     fifthAnimation = Tween<double>(begin: -pi, end: pi).animate(fifthController)
       ..addListener(() {
         setState(() {});
@@ -120,12 +121,12 @@ class _LoadingState extends State<Loading> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     return Column(children: [
-      Text('Loading...', style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold)),
-      SizedBox(
+      const Text('Loading...', style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold)),
+      const SizedBox(
         height: 10,
       ),
       Center(
-        child: Container(
+        child: SizedBox(
           height: 100,
           width: 100,
           child: CustomPaint(
@@ -160,7 +161,7 @@ class MyPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     Paint myArc = Paint()
-      ..color = Color(0xff00A2FF)
+      ..color = const Color(0xff00A2FF)
       ..style = PaintingStyle.stroke
       ..strokeWidth = 5
       ..strokeCap = StrokeCap.round;

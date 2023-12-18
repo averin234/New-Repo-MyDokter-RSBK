@@ -1,12 +1,10 @@
 import 'package:mydokter_rsbk/app/modules/riwayat_keluarga/views/componen/card_riwayat_keluarga.dart';
-import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 
 import 'package:get/get.dart';
 
-import '../controllers/riwayat_keluarga_controller.dart';
 
 class RiwayatKeluargaView extends StatefulWidget {
   const RiwayatKeluargaView({super.key});
@@ -34,7 +32,7 @@ class _RiwayatKeluargaViewState extends State<RiwayatKeluargaView> {
       floatingActionButton: FloatingActionButton(
         onPressed: () => showModalBottomSheet(
           context: context,
-          shape: RoundedRectangleBorder(
+          shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(
               top: Radius.circular(20),
             ),
@@ -42,37 +40,37 @@ class _RiwayatKeluargaViewState extends State<RiwayatKeluargaView> {
           builder: (context) => buildSheet(),
         ),
         elevation: 0,
+        backgroundColor: Colors.tealAccent,
+        foregroundColor: Colors.black,
         child: Container(
           height: 70,
           width: 70,
           decoration: BoxDecoration(
             color: Colors.transparent,
-            borderRadius: BorderRadius.all(Radius.circular(50)),
+            borderRadius: const BorderRadius.all(Radius.circular(50)),
             boxShadow: [
               BoxShadow(
                 color: Colors.grey.withOpacity(0.2),
                 spreadRadius: 3,
                 blurRadius: 3,
-                offset: Offset(0, 3),
+                offset: const Offset(0, 3),
               ),
             ],
           ),
-          child: Icon(Icons.add),
+          child: const Icon(Icons.add),
         ),
-        backgroundColor: Colors.tealAccent,
-        foregroundColor: Colors.black,
       ),
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
-            systemOverlayStyle: SystemUiOverlayStyle(
+            systemOverlayStyle: const SystemUiOverlayStyle(
               statusBarColor: Colors.white, // <-- SEE HERE
               statusBarIconBrightness:
                   Brightness.dark, //<-- For Android SEE HERE (dark icons)
               statusBarBrightness:
                   Brightness.light, //<-- For iOS SEE HERE (dark icons)
             ),
-            shape: RoundedRectangleBorder(
+            shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.vertical(
                 bottom: Radius.circular(10),
               ),
@@ -85,14 +83,14 @@ class _RiwayatKeluargaViewState extends State<RiwayatKeluargaView> {
               onPressed: () {
                 Get.back();
               },
-              icon: Icon(
+              icon: const Icon(
                 Icons.arrow_circle_left_rounded,
                 size: 40,
               ),
-              color: Color.fromARGB(255, 192, 192, 192),
+              color: const Color.fromARGB(255, 192, 192, 192),
             ),
             title:
-                Text("Riwayat Keluarga", style: TextStyle(color: Colors.black)),
+                const Text("Riwayat Keluarga", style: TextStyle(color: Colors.black)),
             bottom: AppBar(
               toolbarHeight: 0,
               automaticallyImplyLeading: false,
@@ -112,10 +110,10 @@ class _RiwayatKeluargaViewState extends State<RiwayatKeluargaView> {
                       ),
                     ),
                     children: <Widget>[
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
-                      CardRiwayatKeluargakDokter(),
+                      const CardRiwayatKeluargakDokter(),
                     ],
                   ),
                 ),
@@ -135,7 +133,7 @@ class _RiwayatKeluargaViewState extends State<RiwayatKeluargaView> {
         ),
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Container(
@@ -145,14 +143,14 @@ class _RiwayatKeluargaViewState extends State<RiwayatKeluargaView> {
                 left: Get.width / 2 - 40,
               ),
               decoration: BoxDecoration(
-                color: Color(0xFFe0e0e0),
+                color: const Color(0xFFe0e0e0),
                 borderRadius: BorderRadius.circular(10),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 25,
             ),
-            Padding(
+            const Padding(
               padding: EdgeInsets.only(left: 15),
               child: Text("Form Riwayat Keluarga",
                   style: TextStyle(
@@ -160,7 +158,7 @@ class _RiwayatKeluargaViewState extends State<RiwayatKeluargaView> {
                       fontSize: 16,
                       color: Colors.blue)),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Expanded(
@@ -176,36 +174,36 @@ class _RiwayatKeluargaViewState extends State<RiwayatKeluargaView> {
                       ),
                     ),
                     children: <Widget>[
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
-                      Padding(
+                      const Padding(
                         padding: EdgeInsets.only(left: 15),
                         child: Text("Nama Keluarga *",
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                             )),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Row(
                         children: [
-                          SizedBox(
+                          const SizedBox(
                             width: 5,
                           ),
                           Expanded(
                             child: Container(
-                              margin: EdgeInsets.only(left: 10),
+                              margin: const EdgeInsets.only(left: 10),
                               decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(10),
-                                border: Border.all(color: Color(0x6cc7d1db)),
+                                border: Border.all(color: const Color(0x6cc7d1db)),
                               ),
                               child: TextFormField(
                                 keyboardType: TextInputType.text,
                                 textInputAction: TextInputAction.done,
-                                decoration: InputDecoration(
+                                decoration: const InputDecoration(
                                   border: InputBorder.none,
                                   focusedBorder: InputBorder.none,
                                   enabledBorder: InputBorder.none,
@@ -219,36 +217,36 @@ class _RiwayatKeluargaViewState extends State<RiwayatKeluargaView> {
                               ),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
-                      Padding(
+                      const Padding(
                         padding: EdgeInsets.only(left: 15),
                         child: Text("Tanggal Lahir *",
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                             )),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Row(
                         children: [
-                          SizedBox(
+                          const SizedBox(
                             width: 5,
                           ),
                           Expanded(
                             child: Container(
-                              margin: EdgeInsets.only(left: 10),
+                              margin: const EdgeInsets.only(left: 10),
                               decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(10),
-                                border: Border.all(color: Color(0x6cc7d1db)),
+                                border: Border.all(color: const Color(0x6cc7d1db)),
                               ),
                               child: TextField(
                                 keyboardType: TextInputType.text,
@@ -263,7 +261,7 @@ class _RiwayatKeluargaViewState extends State<RiwayatKeluargaView> {
                                           2000), //DateTime.now() - not to allow to choose before today.
                                       lastDate: DateTime(2101));
                                 },
-                                decoration: InputDecoration(
+                                decoration: const InputDecoration(
                                   suffixIcon: Icon(
                                     Icons.calendar_month_rounded,
                                     color: Color(0xff4babe7),
@@ -281,41 +279,41 @@ class _RiwayatKeluargaViewState extends State<RiwayatKeluargaView> {
                               ),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
-                      Padding(
+                      const Padding(
                         padding: EdgeInsets.only(left: 15),
                         child: Text("Status Keluarga *",
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                             )),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Row(
                         children: [
-                          SizedBox(
+                          const SizedBox(
                             width: 5,
                           ),
                           Expanded(
                             child: Container(
-                              margin: EdgeInsets.only(left: 10),
+                              margin: const EdgeInsets.only(left: 10),
                               decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(10),
-                                border: Border.all(color: Color(0x6cc7d1db)),
+                                border: Border.all(color: const Color(0x6cc7d1db)),
                               ),
                               child: TextFormField(
                                 keyboardType: TextInputType.text,
                                 textInputAction: TextInputAction.done,
-                                decoration: InputDecoration(
+                                decoration: const InputDecoration(
                                   border: InputBorder.none,
                                   focusedBorder: InputBorder.none,
                                   enabledBorder: InputBorder.none,
@@ -329,12 +327,12 @@ class _RiwayatKeluargaViewState extends State<RiwayatKeluargaView> {
                               ),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                     ],
@@ -342,7 +340,7 @@ class _RiwayatKeluargaViewState extends State<RiwayatKeluargaView> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             InkWell(
@@ -350,10 +348,10 @@ class _RiwayatKeluargaViewState extends State<RiwayatKeluargaView> {
                 height: 45,
                 width: 145,
                 decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 56, 229, 77),
+                  color: const Color.fromARGB(255, 56, 229, 77),
                   borderRadius: BorderRadius.circular(10),
                 ),
-                child: Column(
+                child: const Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
@@ -367,7 +365,7 @@ class _RiwayatKeluargaViewState extends State<RiwayatKeluargaView> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
           ],

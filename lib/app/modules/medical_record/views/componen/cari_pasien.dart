@@ -23,7 +23,7 @@ class _CariPasienState extends State<CariPasien> {
         Container(
           height: 40,
           decoration: BoxDecoration(
-            color: Color.fromARGB(255, 254, 228, 203),
+            color: const Color.fromARGB(255, 254, 228, 203),
             borderRadius: BorderRadius.circular(22),
           ),
           child: FutureBuilder(
@@ -31,7 +31,7 @@ class _CariPasienState extends State<CariPasien> {
                 query: Publics.controller.getDataRegist.value.kode ?? ''),
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
-                return Center(
+                return const Center(
                   child: CircularProgressIndicator(),
                 );
               } else if (snapshot.hasData && snapshot.data != null) {
@@ -60,7 +60,7 @@ class _CariPasienState extends State<CariPasien> {
                                 ],
                             builder: (pasien) => Column(
                                   children: [
-                                    SizedBox(
+                                    const SizedBox(
                                       height: 10,
                                     ),
                                     ListViewPasien(pasien: pasien),

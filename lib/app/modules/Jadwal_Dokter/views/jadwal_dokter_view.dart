@@ -1,5 +1,3 @@
-import 'dart:async';
-import 'dart:math';
 
 import 'package:mydokter_rsbk/app/data/componen/fetch_data.dart';
 import 'package:mydokter_rsbk/app/data/componen/publics.dart';
@@ -11,9 +9,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 
 import 'package:get/get.dart';
-import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
-import 'package:text_scroll/text_scroll.dart';
 import '../../loading_summer/loading_atur_jadwal_dokter.dart';
 import '../../loading_summer/loading_screen_animed.dart';
 import 'componen/card_jadwal.dart';
@@ -30,7 +26,7 @@ class JadwalDokterView extends StatefulWidget {
 class _JadwalDokterViewState extends State<JadwalDokterView> {
   // this enable our app to able to pull down
   late final RefreshController _refreshController; // the refresh controller
-  var _scaffoldKey =
+  final _scaffoldKey =
       GlobalKey<ScaffoldState>(); // this is our key to the scaffold widget
   @override
   void initState() {
@@ -84,7 +80,7 @@ class _JadwalDokterViewState extends State<JadwalDokterView> {
         body: SmartRefresher(
           controller: _refreshController,
           enablePullDown: true,
-          header: WaterDropHeader(),
+          header: const WaterDropHeader(),
           onLoading: _onLoading,
           onRefresh: _onRefresh,
           child: CustomScrollView(
@@ -128,10 +124,10 @@ class _JadwalDokterViewState extends State<JadwalDokterView> {
                 delegate: SliverChildListDelegate(
                   [
                     Container(
-                      decoration: BoxDecoration(
+                      decoration: const BoxDecoration(
                         color: Colors.blueAccent,
                       ),
-                      child: Padding(
+                      child: const Padding(
                         padding: EdgeInsets.all(10),
                         child: Text(
                             "Atur Jadwal Praktik Anda terlebih dahulu agar dapat menambahkan pasien ke daftar antrian. dengan cara tekan tombol +  ",
@@ -227,7 +223,7 @@ class _JadwalDokterViewState extends State<JadwalDokterView> {
   _onRefresh() {
     setState(() {
 // so whatever you want to refresh it must be inside the setState
-      JadwalDokterView(); // if you only want to refresh the list you can place this, so the two can be inside setState
+      const JadwalDokterView(); // if you only want to refresh the list you can place this, so the two can be inside setState
       _refreshController
           .refreshCompleted(); // request complete,the header will enter complete state,
 // resetFooterState : it will set the footer state from noData to idle
@@ -243,6 +239,7 @@ class ModalJadwal extends StatefulWidget {
 }
 
 class _ModalJadwalState extends State<ModalJadwal> {
+  @override
   void initState() {
     _refreshController = RefreshController();
     controller.intervalController.clear();
@@ -839,8 +836,8 @@ class _ModalJadwalState extends State<ModalJadwal> {
               onTap: () async {
                 HapticFeedback.lightImpact();
                 Get.defaultDialog(
-                  backgroundColor: Color(0xe0e0e0),
-                  content: Loading(),
+                  backgroundColor: const Color(0x00e0e0e0),
+                  content: const Loading(),
                   title: '',
                   barrierDismissible: false,
                 );

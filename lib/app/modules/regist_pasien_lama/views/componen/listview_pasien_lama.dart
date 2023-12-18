@@ -2,7 +2,6 @@ import 'package:mydokter_rsbk/app/data/model/get_pasien_by.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../../../data/componen/fetch_data.dart';
 import '../../../../routes/app_pages.dart';
 
 class ListViewPasienLama extends StatelessWidget {
@@ -165,10 +164,10 @@ class ListViewPasienLama extends StatelessWidget {
               children: [
                 Container(
                   padding: const EdgeInsets.only(left: 10),
-                  child: Column(
+                  child: const Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
-                    children: const [],
+                    children: [],
                   ),
                 )
               ],

@@ -1,12 +1,9 @@
-import 'dart:async';
-import 'dart:math';
 import 'package:mydokter_rsbk/app/data/componen/publics.dart';
 import 'package:mydokter_rsbk/app/modules/medical_record/views/componen/cari_pasien.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:get/get.dart';
-import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import '../../../data/componen/fetch_data.dart';
 import '../../loading_summer/loading_listpasien.dart';
@@ -25,7 +22,7 @@ class TindakanView extends StatefulWidget {
 class _TindakanViewState extends State<TindakanView> {
   // this enable our app to able to pull down
   late RefreshController _refreshController; // the refresh controller
-  var _scaffoldKey =
+  final _scaffoldKey =
       GlobalKey<ScaffoldState>(); // this is our key to the scaffold widget
   @override
   void initState() {
@@ -42,7 +39,7 @@ class _TindakanViewState extends State<TindakanView> {
         body: SmartRefresher(
           controller: _refreshController,
           enablePullDown: true,
-          header: WaterDropHeader(),
+          header: const WaterDropHeader(),
           onLoading: _onLoading,
           onRefresh: _onRefresh,
           child: CustomScrollView(
@@ -72,8 +69,8 @@ class _TindakanViewState extends State<TindakanView> {
                     ),
                   ),
                   toolbarHeight: 50,
-                  title: Column(
-                    children: const [
+                  title: const Column(
+                    children: [
                       CariPasien(),
                       SizedBox(
                         height: 10,
@@ -165,7 +162,7 @@ class _TindakanViewState extends State<TindakanView> {
   _onRefresh() {
     setState(() {
 // so whatever you want to refresh it must be inside the setState
-      TindakanView(); // if you only want to refresh the list you can place this, so the two can be inside setState
+      const TindakanView(); // if you only want to refresh the list you can place this, so the two can be inside setState
       _refreshController
           .refreshCompleted(); // request complete,the header will enter complete state,
 // resetFooterState : it will set the footer state from noData to idle

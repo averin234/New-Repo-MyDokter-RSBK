@@ -452,9 +452,9 @@ class _RegisterMahasiswaViewState extends State<RegisterMahasiswaView>
                   color: const Color.fromARGB(255, 56, 229, 77),
                   borderRadius: BorderRadius.circular(10),
                 ),
-                child: Column(
+                child: const Column(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
+                  children: [
                     Text(
                       "Silahkan Periksa Email",
                       style: TextStyle(

@@ -1,5 +1,3 @@
-import 'package:mydokter_rsbk/app/data/model/get_list_kasir.dart';
-import 'package:mydokter_rsbk/app/modules/bottomsheet/bottomsheet_bayar_kasir.dart';
 import 'package:get/get.dart';
 
 import '../modules/Jadwal_Dokter/bindings/jadwal_dokter_binding.dart';
@@ -85,7 +83,7 @@ class AppPages {
   static final routes = [
     GetPage(
       name: _Paths.HOME,
-      page: () => HomeView(),
+      page: () => const HomeView(),
       binding: HomeBinding(),
     ),
     GetPage(
@@ -115,7 +113,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.HISS,
-      page: () => HissView(),
+      page: () => const HissView(),
       binding: HissBinding(),
     ),
     GetPage(
@@ -175,12 +173,12 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.JADWAL_DOKTER,
-      page: () => JadwalDokterView(),
+      page: () => const JadwalDokterView(),
       binding: JadwalDokterBinding(),
     ),
     GetPage(
       name: _Paths.RIWAYAT_PRAKTEK,
-      page: () => RiwayatPraktekView(),
+      page: () => const RiwayatPraktekView(),
       binding: RiwayatPraktekBinding(),
     ),
     GetPage(
@@ -215,7 +213,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.SPLASHSCREEN,
-      page: () => SplashscreenView(),
+      page: () => const SplashscreenView(),
       binding: SplashscreenBinding(),
     ),
     GetPage(
@@ -230,7 +228,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.CETAKAN,
-      page: () => CetakanView(),
+      page: () => const CetakanView(),
       binding: CetakanBinding(),
     ),
     GetPage(
@@ -245,7 +243,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.DETAIL_REGIST_PASIEN_LAMA,
-      page: () => DetailRegistPasienLamaView(),
+      page: () => const DetailRegistPasienLamaView(),
       binding: DetailRegistPasienLamaBinding(),
     ),
     GetPage(
@@ -260,7 +258,7 @@ class AppPages {
     ),
     GetPage(
       name: _Paths.PEMBAYARAN_KARTU_DEBET,
-      page: () => PembayaranKartuDebetView(),
+      page: () => const PembayaranKartuDebetView(),
       binding: PembayaranKartuDebetBinding(),
     ),
   ];

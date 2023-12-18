@@ -69,10 +69,10 @@ class ProfileRiwayat extends StatelessWidget {
             children: [
               Container(
                 padding: const EdgeInsets.only(left: 0),
-                child: Column(
+                child: const Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
+                  children: [
                     Text("No MR",
                         style: TextStyle(
                             fontWeight: FontWeight.bold, fontSize: 13)),
@@ -189,8 +189,8 @@ class ProfileRiwayat extends StatelessWidget {
                     const SizedBox(
                       height: 10,
                     ),
-                    Row(
-                      children: const [
+                    const Row(
+                      children: [
                         Text(":",
                             style: TextStyle(
                                 fontWeight: FontWeight.bold, fontSize: 13)),

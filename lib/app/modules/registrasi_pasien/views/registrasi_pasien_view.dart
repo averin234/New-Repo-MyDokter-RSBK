@@ -47,8 +47,8 @@ class RegistrasiPasienView extends GetView<RegistrasiPasienController> {
               child: InkWell(
                 onTap: () async {
                   Get.defaultDialog(
-                    backgroundColor: Color(0xe0e0e0),
-                    content: Loading(),
+                    backgroundColor: const Color(0x00e0e0e0),
+                    content: const Loading(),
                     title: '',
                     barrierDismissible: false,
                   );
@@ -126,8 +126,8 @@ class RegistrasiPasienView extends GetView<RegistrasiPasienController> {
                   alignment: Alignment.center,
                   decoration: BoxDecoration(
                     color: Colors.grey[300],
-                    borderRadius: BorderRadius.all(Radius.circular(5)),
-                    boxShadow: <BoxShadow>[
+                    borderRadius: const BorderRadius.all(Radius.circular(5)),
+                    boxShadow: const <BoxShadow>[
                       BoxShadow(
                         color: Colors.white12,
                         offset: Offset(2, 1),
@@ -152,8 +152,8 @@ class RegistrasiPasienView extends GetView<RegistrasiPasienController> {
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
-            title: Text('Daftar Pasien Baru'),
-            systemOverlayStyle: SystemUiOverlayStyle(
+            title: const Text('Daftar Pasien Baru'),
+            systemOverlayStyle: const SystemUiOverlayStyle(
               statusBarColor:
                   Color.fromARGB(255, 255, 255, 255), // <-- SEE HERE
               statusBarIconBrightness:
@@ -161,7 +161,7 @@ class RegistrasiPasienView extends GetView<RegistrasiPasienController> {
               statusBarBrightness:
                   Brightness.light, //<-- For iOS SEE HERE (dark icons)
             ),
-            shape: RoundedRectangleBorder(
+            shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.vertical(
                 bottom: Radius.circular(10),
               ),
@@ -170,16 +170,16 @@ class RegistrasiPasienView extends GetView<RegistrasiPasienController> {
                 onPressed: () {
                   Get.back();
                 },
-                icon: Icon(
+                icon: const Icon(
                   Icons.arrow_circle_left_rounded,
                   size: 40,
                 ),
-                color: Color.fromARGB(255, 192, 192, 192)),
+                color: const Color.fromARGB(255, 192, 192, 192)),
             floating: true,
             pinned: true,
             snap: true,
             bottom: AppBar(
-              shape: RoundedRectangleBorder(
+              shape: const RoundedRectangleBorder(
                 borderRadius: BorderRadius.vertical(
                   bottom: Radius.circular(30),
                 ),
@@ -194,10 +194,10 @@ class RegistrasiPasienView extends GetView<RegistrasiPasienController> {
           SliverList(
             delegate: SliverChildListDelegate([
               Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.blueAccent,
                 ),
-                child: Padding(
+                child: const Padding(
                   padding: EdgeInsets.all(10),
                   child: Text(
                       "Tambahkan Pasien Baru Anda untuk masuk ke Daftar Antirian yang akan di tangani",
@@ -205,11 +205,11 @@ class RegistrasiPasienView extends GetView<RegistrasiPasienController> {
                           color: Colors.white, fontWeight: FontWeight.bold)),
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
-              FormRegistrasiPasien(),
-              SizedBox(
+              const FormRegistrasiPasien(),
+              const SizedBox(
                 height: 20,
               ),
             ]),

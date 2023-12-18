@@ -7,10 +7,10 @@ class shimmerPasienLama extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ConstrainedBox(
-      constraints: BoxConstraints(maxWidth: 355),
+      constraints: const BoxConstraints(maxWidth: 355),
       child: Column(children: [
         Container(
-          padding: EdgeInsets.all(10),
+          padding: const EdgeInsets.all(10),
           decoration: BoxDecoration(
             boxShadow: [
               BoxShadow(
@@ -22,25 +22,25 @@ class shimmerPasienLama extends StatelessWidget {
             ],
             color: Colors.white,
             borderRadius: BorderRadius.circular(10),
-            border: Border.all(color: Color(0x6cc7d1db)),
+            border: Border.all(color: const Color(0x6cc7d1db)),
           ),
           child: Column(children: [
             Row(
               children: [
-                SizedBox(width: 10,),
+                const SizedBox(width: 10,),
                 Column(children: [
                   Shimmer(
                     child:
                     Container(
                       height: 10,
                       decoration: BoxDecoration(
-                        color: Color(0xFFBACDDB),
+                        color: const Color(0xFFBACDDB),
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      padding: EdgeInsets.all(10),
-                      constraints: BoxConstraints(minWidth: 120, maxWidth: 195),
+                      padding: const EdgeInsets.all(10),
+                      constraints: const BoxConstraints(minWidth: 120, maxWidth: 195),
                     ),),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Shimmer(
@@ -48,16 +48,16 @@ class shimmerPasienLama extends StatelessWidget {
                     Container(
                       height: 10,
                       decoration: BoxDecoration(
-                        color: Color(0xFFBACDDB),
+                        color: const Color(0xFFBACDDB),
                         borderRadius: BorderRadius.circular(10),
                       ),
-                      padding: EdgeInsets.all(10),
-                      constraints: BoxConstraints(minWidth: 120, maxWidth: 195),
+                      padding: const EdgeInsets.all(10),
+                      constraints: const BoxConstraints(minWidth: 120, maxWidth: 195),
                     ),),
                 ],),
               ],),
           ],),),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
 

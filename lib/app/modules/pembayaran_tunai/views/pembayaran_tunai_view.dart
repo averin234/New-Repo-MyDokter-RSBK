@@ -6,13 +6,10 @@ import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:get/get.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
-import '../../../data/componen/fetch_data.dart';
-import '../../../data/componen/publics.dart';
-import '../../../data/model/profile_pasien/get_tunai.dart';
 import '../controllers/pembayaran_tunai_controller.dart';
 
 class PembayaranTunaiView extends StatefulWidget {
-  const PembayaranTunaiView();
+  const PembayaranTunaiView({super.key});
 
   @override
   _PembayaranTunaiViewState createState() => _PembayaranTunaiViewState();
@@ -21,7 +18,7 @@ class PembayaranTunaiView extends StatefulWidget {
 class _PembayaranTunaiViewState extends State<PembayaranTunaiView> {
   // this enable our app to able to pull down
   late final RefreshController _refreshController; // the refresh controller
-  var _scaffoldKey =
+  final _scaffoldKey =
       GlobalKey<ScaffoldState>(); // this is our key to the scaffold widget
   @override
   void initState() {
@@ -108,7 +105,7 @@ class _PembayaranTunaiViewState extends State<PembayaranTunaiView> {
           body: SmartRefresher(
             controller: _refreshController,
             enablePullDown: true,
-            header: WaterDropHeader(),
+            header: const WaterDropHeader(),
             onLoading: _onLoading,
             onRefresh: _onRefresh,
             child: CustomScrollView(
@@ -151,11 +148,11 @@ class _PembayaranTunaiViewState extends State<PembayaranTunaiView> {
                 SliverList(
                   delegate: SliverChildListDelegate(
                     [
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
-                      Databilling(),
-                      SizedBox(
+                      const Databilling(),
+                      const SizedBox(
                         height: 10,
                       ),
                       // FutureBuilder(
@@ -213,7 +210,7 @@ class _PembayaranTunaiViewState extends State<PembayaranTunaiView> {
   _onRefresh() {
     setState(() {
 // so whatever you want to refresh it must be inside the setState
-      PembayaranTunaiView(); // if you only want to refresh the list you can place this, so the two can be inside setState
+      const PembayaranTunaiView(); // if you only want to refresh the list you can place this, so the two can be inside setState
       _refreshController
           .refreshCompleted(); // request complete,the header will enter complete state,
 // resetFooterState : it will set the footer state from noData to idle
@@ -320,7 +317,7 @@ class _PembayaranTunaiViewState extends State<PembayaranTunaiView> {
                                     ),
                                     Expanded(
                                       child: Container(
-                                          padding: EdgeInsets.only(
+                                          padding: const EdgeInsets.only(
                                               right: 10,
                                               left: 10,
                                               top: 15,
@@ -411,16 +408,16 @@ class _PembayaranTunaiViewState extends State<PembayaranTunaiView> {
                                   height: 10,
                                 ),
                                 Padding(
-                                  padding: EdgeInsets.only(left: 10, right: 15),
+                                  padding: const EdgeInsets.only(left: 10, right: 15),
                                   child: Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                     children: [
-                                      Text('Pasien',
+                                      const Text('Pasien',
                                           style: TextStyle(
                                               fontWeight: FontWeight.bold)),
                                       Text(harga.namaBagian ?? '',
-                                          style: TextStyle(
+                                          style: const TextStyle(
                                               fontWeight: FontWeight.bold)),
                                     ],
                                   ),
@@ -828,7 +825,7 @@ class _PembayaranTunaiViewState extends State<PembayaranTunaiView> {
                     ),
                   ],
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
               ])); //whatever you're returning, does not have to be a Container

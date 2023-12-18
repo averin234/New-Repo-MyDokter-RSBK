@@ -7,7 +7,6 @@ import 'package:search_page/search_page.dart';
 import '../../../../data/componen/fetch_data.dart';
 import '../../../../data/componen/publics.dart';
 import '../../../../data/model/get_list_kasir.dart';
-import '../../../../data/model/profile_pasien/get_tunai.dart';
 
 class SearchPendapatan1 extends StatefulWidget {
   const SearchPendapatan1({super.key});
@@ -35,7 +34,7 @@ class _SearchPendapatan1State extends State<SearchPendapatan1> {
                 kode_dokter: Publics.controller.getDataRegist.value.kode ?? ''),
             builder: (context, snapshot) {
               if (snapshot.connectionState == ConnectionState.waiting) {
-                return Center(
+                return const Center(
                   child: CircularProgressIndicator(),
                 );
               } else if (snapshot.hasData && snapshot.data != null) {
@@ -63,7 +62,7 @@ class _SearchPendapatan1State extends State<SearchPendapatan1> {
                           kasir.namaBagian,
                         ],
                         builder: (kasir) => Column(children: [
-                          SizedBox(
+                          const SizedBox(
                             height: 10,
                           ),
                             Pendapatan(kasir: kasir),],)

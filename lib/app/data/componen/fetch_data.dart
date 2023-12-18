@@ -23,7 +23,6 @@ import "package:get/get.dart";
 import "package:http/http.dart" as http;
 import "package:intl/intl.dart";
 import "package:path_provider/path_provider.dart";
-import "../../modules/detail_antrian/views/componen/soap/assestment.dart";
 import "../model/get_detail_dokter.dart";
 import "../model/get_nama_obat.dart";
 import "../model/get_racikan.dart";

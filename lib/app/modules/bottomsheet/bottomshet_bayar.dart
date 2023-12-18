@@ -133,7 +133,7 @@ Future bottomSheetBayar({required kasir,}) {
                                         ),
                                         Expanded(
                                           child: Container(
-                                            padding: EdgeInsets.only(right: 10, left: 10, top: 15, bottom: 15),
+                                            padding: const EdgeInsets.only(right: 10, left: 10, top: 15, bottom: 15),
                                             margin: const EdgeInsets.only(
                                                 left: 10, right: 10),
                                             decoration: BoxDecoration(
@@ -227,16 +227,16 @@ Future bottomSheetBayar({required kasir,}) {
                                     ),
                                      Padding(
                                       padding:
-                                      EdgeInsets.only(left: 10, right: 15),
+                                      const EdgeInsets.only(left: 10, right: 15),
                                       child: Row(
                                         mainAxisAlignment:
                                         MainAxisAlignment.spaceBetween,
                                         children: [
-                                          Text('Pasien',
+                                          const Text('Pasien',
                                               style: TextStyle(
                                                   fontWeight: FontWeight.bold)),
                                           Text(kasir.namaPasien ?? '',
-                                              style: TextStyle(
+                                              style: const TextStyle(
                                                   fontWeight: FontWeight.bold)),
                                         ],
                                       ),
@@ -666,7 +666,7 @@ Future bottomSheetBayar({required kasir,}) {
                         ),
                       ],
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                   ])); //whatever you're returning, does not have to be a Container

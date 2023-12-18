@@ -14,7 +14,7 @@ class ListViewTindakan extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         InkWell(
@@ -107,9 +107,9 @@ class ListViewTindakan extends StatelessWidget {
                                 ),
                                 child: Column(
                                   children: [
-                                    Text(
+                                    const Text(
                                       "Antrian",
-                                      style: const TextStyle(
+                                      style: TextStyle(
                                         color: Colors.black,
                                         fontWeight: FontWeight.bold,
                                       ),
@@ -118,7 +118,7 @@ class ListViewTindakan extends StatelessWidget {
                                       height: 5,
                                     ),
                                     Text(
-                                      "${antrian.noAntrian ?? ''}",
+                                      antrian.noAntrian ?? '',
                                       style: const TextStyle(
                                         color: Colors.black,
                                         fontSize: 25,

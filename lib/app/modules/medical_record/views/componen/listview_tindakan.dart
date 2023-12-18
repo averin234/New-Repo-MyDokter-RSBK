@@ -38,7 +38,7 @@ class ListViewPasien extends StatelessWidget {
                               : Avatar.perempuan)),
                       backgroundColor: Colors.transparent,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 10,
                     ),
                     Column(
@@ -49,7 +49,7 @@ class ListViewPasien extends StatelessWidget {
                               style: const TextStyle(
                                   fontWeight: FontWeight.bold, fontSize: 13)),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 10,
                         ),
                         Row(
@@ -137,7 +137,7 @@ class ListViewPasien extends StatelessWidget {
                       ],
                     ),
                   ])),
-              SizedBox(
+              const SizedBox(
                 width: 10,
               ),
               Column(crossAxisAlignment: CrossAxisAlignment.center, children: [
@@ -145,7 +145,7 @@ class ListViewPasien extends StatelessWidget {
                   height: 10,
                 ),
                 Container(
-                  margin: EdgeInsets.only(right: 10),
+                  margin: const EdgeInsets.only(right: 10),
                   padding: const EdgeInsets.all(10),
                   decoration: BoxDecoration(
                     color: const Color.fromARGB(255, 219, 246, 253),
@@ -153,12 +153,12 @@ class ListViewPasien extends StatelessWidget {
                   ),
                   child: Column(
                     children: [
-                      Text("Cek MR",
+                      const Text("Cek MR",
                           textAlign: TextAlign.center,
                           style: TextStyle(
                               color: Colors.black,
                               fontWeight: FontWeight.bold)),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Image.asset(
@@ -173,7 +173,7 @@ class ListViewPasien extends StatelessWidget {
           ),
         ),
       ),
-      SizedBox(
+      const SizedBox(
         height: 5,
       ),
     ]);

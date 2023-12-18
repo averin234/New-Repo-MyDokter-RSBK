@@ -10,8 +10,6 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../../../routes/app_pages.dart';
 import '../../bottomsheet/bottomsheet_selesai_daftar.dart';
-import '../../home/views/home_view.dart';
-import '../../login/views/login_view.dart';
 
 class RegisterDosenView extends StatefulWidget {
   const RegisterDosenView({Key? key}) : super(key: key);
@@ -441,9 +439,9 @@ class _RegisterDosenViewState extends State<RegisterDosenView>
                   color: const Color.fromARGB(255, 56, 229, 77),
                   borderRadius: BorderRadius.circular(10),
                 ),
-                child: Column(
+                child: const Column(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  children: const [
+                  children: [
                     Text(
                       "Silahkan Periksa Email",
                       style: TextStyle(

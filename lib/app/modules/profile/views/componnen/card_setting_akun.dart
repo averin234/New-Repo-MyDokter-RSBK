@@ -30,7 +30,7 @@ class CardSettingAkun extends GetView<ProfileController> {
             margin: const EdgeInsets.only(top: 0, left: 10, right: 10),
             padding: const EdgeInsets.only(left: 10, right: 10, bottom: 10),
             decoration: BoxDecoration(
-              border: Border.all(color: Color(0x6cc7d1db)),
+              border: Border.all(color: const Color(0x6cc7d1db)),
               color: Colors.white,
               borderRadius: BorderRadius.circular(10),
               boxShadow: [
@@ -132,7 +132,7 @@ class CardSettingAkun extends GetView<ProfileController> {
                   androidAppId: "com.adokterregister.mydokter_rsbk",
                   // iOSAppId: "585027354",
                 ),
-                child: Row(
+                child: const Row(
                   children: [
                     Icon(
                       Icons.system_security_update,
@@ -162,16 +162,16 @@ class CardSettingAkun extends GetView<ProfileController> {
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
             ]),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Padding(
-            padding: EdgeInsets.only(right: 10, left: 10),
+            padding: const EdgeInsets.only(right: 10, left: 10),
             child: ElevatedButton.icon(
               icon: const Icon(
                 Icons.logout_rounded,
@@ -192,8 +192,7 @@ class CardSettingAkun extends GetView<ProfileController> {
                 );
               },
               style: ElevatedButton.styleFrom(
-                elevation: 0,
-                primary: Colors.redAccent,
+                elevation: 0, backgroundColor: Colors.redAccent,
                 minimumSize: const Size.fromHeight(40),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(10),
@@ -406,8 +405,8 @@ class CardSettingAkun extends GetView<ProfileController> {
                               controller
                                   .confirmpwbaruController.text.isNotEmpty) {
                             Get.defaultDialog(
-                              backgroundColor: Color(0xe0e0e0),
-                              content: Loading(),
+                              backgroundColor: const Color(0x00e0e0e0),
+                              content: const Loading(),
                               title: '',
                               barrierDismissible: false,
                             );
@@ -437,8 +436,8 @@ class CardSettingAkun extends GetView<ProfileController> {
                             borderRadius: BorderRadius.circular(7),
                             color: Colors.blue,
                           ),
-                          child: Column(
-                            children: const [
+                          child: const Column(
+                            children: [
                               Padding(
                                 padding: EdgeInsets.all(16),
                                 child: Text("Ubah Password",
@@ -490,7 +489,7 @@ class CardSettingAkun extends GetView<ProfileController> {
                     height: 30,
                   ),
                   Padding(
-                    padding: EdgeInsets.only(right: 10, left: 10),
+                    padding: const EdgeInsets.only(right: 10, left: 10),
                     child: ElevatedButton.icon(
                       icon: const Icon(
                         Icons.logout_rounded,
@@ -501,8 +500,7 @@ class CardSettingAkun extends GetView<ProfileController> {
                           style: TextStyle(fontSize: 14.0)),
                       onPressed: () => Get.offAllNamed(Routes.LOGIN),
                       style: ElevatedButton.styleFrom(
-                        elevation: 0,
-                        primary: Colors.redAccent,
+                        elevation: 0, backgroundColor: Colors.redAccent,
                         minimumSize: const Size.fromHeight(40),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10),

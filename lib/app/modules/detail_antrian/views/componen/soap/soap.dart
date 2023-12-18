@@ -122,7 +122,7 @@ class Soap extends StatelessWidget {
                 onTap: () async {
                   Get.defaultDialog(
                     backgroundColor: const Color(0x00e0e0e0),
-                    content: Loading(),
+                    content: const Loading(),
                     title: '',
                     barrierDismissible: false,
                   );

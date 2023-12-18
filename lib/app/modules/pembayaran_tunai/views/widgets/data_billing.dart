@@ -1,9 +1,6 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:get/get_state_manager/src/simple/get_view.dart';
 
-import '../../../../data/model/profile_pasien/get_tunai.dart';
 import '../../controllers/pembayaran_tunai_controller.dart';
 
 
@@ -13,7 +10,7 @@ import '../../controllers/pembayaran_tunai_controller.dart';
   @override
   Widget build(BuildContext context) {
     return  Container(
-      margin: EdgeInsets.only(right: 10, left: 10),
+      margin: const EdgeInsets.only(right: 10, left: 10),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(10),
@@ -55,7 +52,7 @@ import '../../controllers/pembayaran_tunai_controller.dart';
               const SizedBox(
                 height: 10,
               ),
-              Padding(
+              const Padding(
                 padding:
                 EdgeInsets.only(left: 10, right: 10),
                 child: Row(
@@ -71,53 +68,53 @@ import '../../controllers/pembayaran_tunai_controller.dart';
                   ],
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 20,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-              Padding(padding: EdgeInsets.only(left: 10),
+              Padding(padding: const EdgeInsets.only(left: 10),
                 child :
               Text(controller.kasir.namaBagian ?? ''),),
-                Padding(padding: EdgeInsets.only(right: 10),
+                Padding(padding: const EdgeInsets.only(right: 10),
                   child :
                   Text(controller.kasir.billing ?? ''),),
               ],),
               const SizedBox(
                 height: 10,
               ),
-              Column(
+              const Column(
                 children: [
                   Divider(
                     height: 3,
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Padding(padding: EdgeInsets.only(left: 10),
+                  Padding(padding: const EdgeInsets.only(left: 10),
                     child :
                     Text(controller.kasir.namaBagian ?? ''),),
-                  Padding(padding: EdgeInsets.only(right: 10),
+                  Padding(padding: const EdgeInsets.only(right: 10),
                     child :
                     Text(controller.kasir.billing ?? ''),),
                 ],),
               const SizedBox(
                 height: 10,
               ),
-              Column(
+              const Column(
                 children: [
                   Divider(
                     height: 3,
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10,
               ),
               Row(
@@ -138,7 +135,7 @@ import '../../controllers/pembayaran_tunai_controller.dart';
                   ),
                   Expanded(
                     child: Container(
-                        padding: EdgeInsets.only(right: 10, left: 10, top: 15, bottom: 15),
+                        padding: const EdgeInsets.only(right: 10, left: 10, top: 15, bottom: 15),
                         margin: const EdgeInsets.only(
                             left: 10, right: 10),
                         decoration: BoxDecoration(
@@ -233,16 +230,16 @@ import '../../controllers/pembayaran_tunai_controller.dart';
               ),
               Padding(
                 padding:
-                EdgeInsets.only(left: 10, right: 15),
+                const EdgeInsets.only(left: 10, right: 15),
                 child: Row(
                   mainAxisAlignment:
                   MainAxisAlignment.spaceBetween,
                   children: [
-                    Text('Pasien',
+                    const Text('Pasien',
                         style: TextStyle(
                             fontWeight: FontWeight.bold)),
                     Text(controller.kasir.namaPasien ?? '',
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontWeight: FontWeight.bold)),
                   ],
                 ),
@@ -269,7 +266,7 @@ import '../../controllers/pembayaran_tunai_controller.dart';
                   ),
                   Expanded(
                     child: Container(
-                        padding: EdgeInsets.only(right: 10, left: 10, top: 15, bottom: 15),
+                        padding: const EdgeInsets.only(right: 10, left: 10, top: 15, bottom: 15),
                         margin: const EdgeInsets.only(
                             left: 10, right: 10),
                         decoration: BoxDecoration(
@@ -285,7 +282,7 @@ import '../../controllers/pembayaran_tunai_controller.dart';
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
               Row(
@@ -320,7 +317,7 @@ import '../../controllers/pembayaran_tunai_controller.dart';
                       child: TextFormField(
                         keyboardType: TextInputType.text,
                         controller: controller.pembulatan,
-                        style:  TextStyle(fontSize: 14),
+                        style:  const TextStyle(fontSize: 14),
                         textInputAction:
                         TextInputAction.done,
                         decoration: const InputDecoration(
@@ -343,7 +340,7 @@ import '../../controllers/pembayaran_tunai_controller.dart';
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
               Row(
@@ -472,7 +469,7 @@ import '../../controllers/pembayaran_tunai_controller.dart';
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
               Row(
@@ -528,7 +525,7 @@ import '../../controllers/pembayaran_tunai_controller.dart';
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
               Row(
@@ -584,7 +581,7 @@ import '../../controllers/pembayaran_tunai_controller.dart';
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 5,
               ),
               const SizedBox(

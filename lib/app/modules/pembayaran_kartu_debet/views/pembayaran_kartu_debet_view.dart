@@ -1,16 +1,10 @@
-import 'package:mydokter_rsbk/app/modules/bottomsheet/bottomsheet_bayar_kasir.dart';
 import 'package:mydokter_rsbk/app/modules/pembayaran_kartu_debet/views/widgets/card_pembayaran_debet.dart';
-import 'package:mydokter_rsbk/app/modules/pembayaran_tunai/views/widgets/data_billing.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 
 import 'package:get/get.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
-import '../../../data/componen/fetch_data.dart';
-import '../../../data/componen/publics.dart';
-import '../../../data/model/get_list_kasir.dart';
 import '../controllers/pembayaran_kartu_debet_controller.dart';
 
 class PembayaranKartuDebetView extends StatefulWidget {
@@ -26,7 +20,7 @@ class PembayaranKartuDebetView extends StatefulWidget {
 class _PembayaranKartuDebetViewState extends State<PembayaranKartuDebetView> {
   // this enable our app to able to pull down
   late final RefreshController _refreshController; // the refresh controller
-  var _scaffoldKey =
+  final _scaffoldKey =
       GlobalKey<ScaffoldState>(); // this is our key to the scaffold widget
   @override
   void initState() {
@@ -113,7 +107,7 @@ class _PembayaranKartuDebetViewState extends State<PembayaranKartuDebetView> {
           body: SmartRefresher(
             controller: _refreshController,
             enablePullDown: true,
-            header: WaterDropHeader(),
+            header: const WaterDropHeader(),
             onLoading: _onLoading,
             onRefresh: _onRefresh,
             child: CustomScrollView(
@@ -156,10 +150,10 @@ class _PembayaranKartuDebetViewState extends State<PembayaranKartuDebetView> {
                 SliverList(
                   delegate: SliverChildListDelegate(
                     [
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
-                      PembayaranDebet(),
+                      const PembayaranDebet(),
                       // FutureBuilder(
                       //     future: API.getListKasir(
                       //         kode_dokter:
@@ -196,7 +190,7 @@ class _PembayaranKartuDebetViewState extends State<PembayaranKartuDebetView> {
                       //         );
                       //       }
                       //     }),
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
                     ],
@@ -218,7 +212,7 @@ class _PembayaranKartuDebetViewState extends State<PembayaranKartuDebetView> {
   _onRefresh() {
     setState(() {
 // so whatever you want to refresh it must be inside the setState
-      PembayaranKartuDebetView(); // if you only want to refresh the list you can place this, so the two can be inside setState
+      const PembayaranKartuDebetView(); // if you only want to refresh the list you can place this, so the two can be inside setState
       _refreshController
           .refreshCompleted(); // request complete,the header will enter complete state,
 // resetFooterState : it will set the footer state from noData to idle

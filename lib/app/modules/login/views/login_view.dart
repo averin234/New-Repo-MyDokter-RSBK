@@ -8,7 +8,6 @@ import 'package:particles_flutter/particles_flutter.dart';
 import '../../../data/model/login_and_regist/akses_px.dart';
 import '../../../routes/app_pages.dart';
 import '../../loading_summer/loading_screen_animed.dart';
-import 'componen/background.dart';
 
 class LoginView extends GetView<LoginController> {
   const LoginView({Key? key}) : super(key: key);
@@ -110,7 +109,7 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
             speedOfParticles: 1.5,
             maxParticleSize: 7,
             particleColor: Colors.white.withOpacity(.7),
-            awayAnimationDuration: Duration(milliseconds: 600),
+            awayAnimationDuration: const Duration(milliseconds: 600),
             awayAnimationCurve: Curves.easeInOutBack,
             onTapAnimation: true,
             isRandSize: true,
@@ -163,7 +162,7 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                                   style: TextStyle(
                                       fontWeight: FontWeight.bold,
                                       fontSize: 12)),
-                              SizedBox(
+                              const SizedBox(
                                 height: 10,
                               ),
                               const Text(
@@ -207,7 +206,7 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                                 ),
                                 component(Icons.email_outlined, 'User ID...',
                                     false, true, controller.usernameController),
-                                SizedBox(
+                                const SizedBox(
                                   height: 10,
                                 ),
                                 component1(
@@ -297,7 +296,7 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                                           Get.defaultDialog(
                                             backgroundColor:
                                                 const Color(0x00e0e0e0),
-                                            content: Loading(),
+                                            content: const Loading(),
                                             title: '',
                                             barrierDismissible: false,
                                           );
@@ -332,7 +331,7 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                                     SizedBox(width: size.width / 25),
                                   ],
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 10,
                                 ),
                                 // InkWell(
@@ -355,7 +354,7 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                                 //     ),
                                 //   ),
                                 // ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 10,
                                 ),
                                 const SizedBox(),
@@ -590,7 +589,7 @@ Widget buildSheet() {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SizedBox(
+                const SizedBox(
                   width: 10,
                 ),
                 Row(
@@ -599,10 +598,10 @@ Widget buildSheet() {
                       'assets/images/doctor.png',
                       height: 60,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 30,
                     ),
-                    Text(
+                    const Text(
                       "Register Dokter",
                       style: TextStyle(
                           color: Colors.black,
@@ -639,17 +638,17 @@ Widget buildSheet() {
               children: [
                 Row(
                   children: [
-                    SizedBox(
+                    const SizedBox(
                       width: 10,
                     ),
                     Image.asset(
                       'assets/images/dosen.png',
                       height: 60,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 20,
                     ),
-                    Text(
+                    const Text(
                       "Register Dosen",
                       style: TextStyle(
                           color: Colors.black,
@@ -684,7 +683,7 @@ Widget buildSheet() {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                SizedBox(
+                const SizedBox(
                   width: 10,
                 ),
                 Row(
@@ -693,10 +692,10 @@ Widget buildSheet() {
                       'assets/images/mahasiswa.png',
                       height: 60,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       width: 30,
                     ),
-                    Text(
+                    const Text(
                       "Register Mahasiswa",
                       style: TextStyle(
                           color: Colors.black,
@@ -805,7 +804,7 @@ Widget LupaPassword(context) {
               if (controller.lupapassword.text.isNotEmpty) {
                 Get.defaultDialog(
                   backgroundColor: const Color(0x00e0e0e0),
-                  content: Loading(),
+                  content: const Loading(),
                   title: '',
                   barrierDismissible: false,
                 );

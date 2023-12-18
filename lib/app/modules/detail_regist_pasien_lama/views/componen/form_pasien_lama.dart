@@ -319,7 +319,7 @@ class AppTextField extends StatelessWidget {
                           'assets/images/timetable.png',
                           height: 100,
                         ),
-                        Center(
+                        const Center(
                           child: Text('Tidak ada waktu periksa yang tersedia.'),
                         ),
                       ]

@@ -181,7 +181,7 @@ class Planning extends StatelessWidget {
                   const Text("Isi Resep")
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 width: 20,
               ),
               Column(
@@ -266,14 +266,14 @@ class Planning extends StatelessWidget {
             width: 60,
             height: 30,
           ),
-          Row(
+          const Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const SizedBox(
+              SizedBox(
                 width: 20,
               ),
 
-              const SizedBox(
+              SizedBox(
                 width: 20,
               ),
               // Column(
@@ -315,7 +315,7 @@ class Planning extends StatelessWidget {
               //     const Text("Pemeriksaan")
               //   ],
               // ),
-              const SizedBox(
+              SizedBox(
                 height: 5,
               ),
             ],

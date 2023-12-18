@@ -1,7 +1,6 @@
 import 'package:mydokter_rsbk/app/data/componen/fetch_data.dart';
 import 'package:mydokter_rsbk/app/data/componen/publics.dart';
 import 'package:mydokter_rsbk/app/modules/medical_record/views/componen/search_medical_record.dart';
-import 'package:mydokter_rsbk/app/modules/medical_record/views/componen/listview_tindakan.dart';
 import 'package:mydokter_rsbk/app/modules/regist_pasien_lama/views/componen/listview_pasien_lama.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -9,7 +8,6 @@ import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 
 import 'package:get/get.dart';
 
-import '../../detail_regist_pasien_lama/views/detail_regist_pasien_lama_view.dart';
 import '../../loading_summer/loading_pasien_lama.dart';
 import '../controllers/tambah_pasien_lama_controller.dart';
 
@@ -57,7 +55,7 @@ class TambahPasienLamaView extends GetView<TambahPasienLamaController> {
               toolbarHeight: 50,
               automaticallyImplyLeading: false,
               elevation: 0,
-              title: Column(
+              title: const Column(
                 children: [
                   SearchTindakanDokter(),
                   SizedBox(
@@ -71,10 +69,10 @@ class TambahPasienLamaView extends GetView<TambahPasienLamaController> {
           SliverList(
             delegate: SliverChildListDelegate([
               Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.blueAccent,
                 ),
-                child: Padding(
+                child: const Padding(
                   padding: EdgeInsets.all(10),
                   child: Text(
                       "Cari/Pilih Pasien Lama yang sudah berkunjung sebelumnya untuk dapat di tangani kembali",
@@ -85,7 +83,7 @@ class TambahPasienLamaView extends GetView<TambahPasienLamaController> {
               const SizedBox(
                 height: 10,
               ),
-              Padding(
+              const Padding(
                 padding: EdgeInsets.only(right: 10, left: 10),
                 child: Text(
                   "List Riwayat Pasien",
@@ -108,7 +106,7 @@ class TambahPasienLamaView extends GetView<TambahPasienLamaController> {
                           ? Center(
                               child: Column(
                                 children: [
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 20,
                                   ),
                                   const Text(
@@ -139,7 +137,7 @@ class TambahPasienLamaView extends GetView<TambahPasienLamaController> {
                                       .toList()),
                             );
                     } else {
-                      return Column(
+                      return const Column(
                         children: [
                           shimmerPasienLama(),
                           shimmerPasienLama(),

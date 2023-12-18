@@ -1,10 +1,7 @@
 import 'package:mydokter_rsbk/app/data/model/get_list_kasir.dart';
 import 'package:mydokter_rsbk/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
-import '../../../bottomsheet/bottomsheet_bayar_kasir.dart';
 
 class Pendapatan extends StatelessWidget {
   final Kasir kasir;
@@ -199,11 +196,11 @@ class Pendapatan extends StatelessWidget {
         color: Colors.transparent,
       ),
       child: Column(children: [
-        Text(
+        const Text(
           'Pilih metode pembayaran',
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         InkWell(
@@ -213,8 +210,8 @@ class Pendapatan extends StatelessWidget {
                 parameters: {'nr': kasir.noRegistrasi ?? ''}, arguments: kasir);
           },
           child: Container(
-            padding: EdgeInsets.all(10),
-            margin: EdgeInsets.only(right: 10, left: 10),
+            padding: const EdgeInsets.all(10),
+            margin: const EdgeInsets.only(right: 10, left: 10),
             decoration: BoxDecoration(
               border: Border.all(color: const Color(0x6cc7d1db)),
               borderRadius: BorderRadius.circular(10),
@@ -227,16 +224,16 @@ class Pendapatan extends StatelessWidget {
                     'assets/images/rp.png',
                     height: 40,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 20,
                   ),
-                  Text('Bayar Tunai',
+                  const Text('Bayar Tunai',
                       style:
                           TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
                 ]),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         InkWell(
@@ -246,8 +243,8 @@ class Pendapatan extends StatelessWidget {
                 parameters: {'nr': kasir.noRegistrasi ?? ''}, arguments: kasir);
           },
           child: Container(
-            padding: EdgeInsets.all(10),
-            margin: EdgeInsets.only(right: 10, left: 10),
+            padding: const EdgeInsets.all(10),
+            margin: const EdgeInsets.only(right: 10, left: 10),
             decoration: BoxDecoration(
               border: Border.all(color: const Color(0x6cc7d1db)),
               borderRadius: BorderRadius.circular(10),
@@ -260,10 +257,10 @@ class Pendapatan extends StatelessWidget {
                     'assets/images/atm.png',
                     height: 40,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 20,
                   ),
-                  Text('Kartu Debet',
+                  const Text('Kartu Debet',
                       style: TextStyle(
                         fontSize: 15,
                         fontWeight: FontWeight.bold,
@@ -271,13 +268,13 @@ class Pendapatan extends StatelessWidget {
                 ]),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         InkWell(
           child: Container(
-            padding: EdgeInsets.all(10),
-            margin: EdgeInsets.only(right: 10, left: 10),
+            padding: const EdgeInsets.all(10),
+            margin: const EdgeInsets.only(right: 10, left: 10),
             decoration: BoxDecoration(
               border: Border.all(color: const Color(0x6cc7d1db)),
               borderRadius: BorderRadius.circular(10),
@@ -290,10 +287,10 @@ class Pendapatan extends StatelessWidget {
                     'assets/images/credit.png',
                     height: 40,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 20,
                   ),
-                  Text('Kartu Kredit',
+                  const Text('Kartu Kredit',
                       style:
                           TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
                 ]),

@@ -1,17 +1,12 @@
-import 'dart:async';
-import 'dart:math';
 
 import 'package:mydokter_rsbk/app/data/componen/fetch_data.dart';
 import 'package:mydokter_rsbk/app/data/model/get_detail_mr.dart';
-import 'package:mydokter_rsbk/app/modules/detail_antrian/views/componen/surat.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_speed_dial/flutter_speed_dial.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import '../../../data/model/list_data.dart';
 import '../../../routes/app_pages.dart';
@@ -27,7 +22,6 @@ import 'componen/planning.dart';
 import 'componen/planning/resep.dart';
 import 'componen/soap/soap.dart';
 import 'componen/profile_pasien.dart';
-import 'componen/text_field.dart';
 import 'componen/vital_sign.dart';
 
 class DetailTindakanView extends GetView<DetailTindakanController> {
@@ -100,7 +94,7 @@ class DetailTindakanView extends GetView<DetailTindakanController> {
             ],
           ),
         ),
-        body: DetailMR(),
+        body: const DetailMR(),
       ),
     );
   }
@@ -118,7 +112,7 @@ class DetailMR extends StatefulWidget {
 class _DetailMRState extends State<DetailMR> {
   // this enable our app to able to pull down
   late RefreshController _refreshController; // the refresh controller
-  var _scaffoldKey =
+  final _scaffoldKey =
       GlobalKey<ScaffoldState>(); // this is our key to the scaffold widget
   @override
   void initState() {
@@ -141,7 +135,7 @@ class _DetailMRState extends State<DetailMR> {
           body: SmartRefresher(
               controller: _refreshController,
               enablePullDown: true,
-              header: WaterDropHeader(),
+              header: const WaterDropHeader(),
               onLoading: _onLoading,
               onRefresh: _onRefresh,
               child: CustomScrollView(
@@ -646,7 +640,7 @@ class _DetailMRState extends State<DetailMR> {
                                                                         backgroundColor:
                                                                             const Color(0x00e0e0e0),
                                                                         content:
-                                                                            Loading(),
+                                                                            const Loading(),
                                                                         title:
                                                                             '',
                                                                         barrierDismissible:
@@ -792,7 +786,7 @@ class _DetailMRState extends State<DetailMR> {
                                                 ),
                                               ],
                                             ),
-                                            child: Column(
+                                            child: const Column(
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.start,
                                               mainAxisAlignment:
@@ -893,7 +887,7 @@ class _DetailMRState extends State<DetailMR> {
                                                               .data!.icd10 ??
                                                           [];
                                                       return data.isEmpty
-                                                          ? Column(
+                                                          ? const Column(
                                                               mainAxisAlignment:
                                                                   MainAxisAlignment
                                                                       .start,
@@ -1014,16 +1008,16 @@ class _DetailMRState extends State<DetailMR> {
                 child: Center(
               child: Column(
                 children: [
-                  Text('Data Berhasil Di Tambahkan',
+                  const Text('Data Berhasil Di Tambahkan',
                       style: TextStyle(
                           color: Colors.black45,
                           fontSize: 18,
                           fontWeight: FontWeight.bold),
                       textAlign: TextAlign.center),
-                  SizedBox(
+                  const SizedBox(
                     height: 5,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   // Image.asset(
@@ -1033,14 +1027,14 @@ class _DetailMRState extends State<DetailMR> {
                   //   width: 200,
                   //   height: 200,
                   // ),
-                  SizedBox(
+                  const SizedBox(
                     height: 30,
                   ),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Padding(
-                        padding: EdgeInsets.only(right: 10, left: 10, top: 20),
+                        padding: const EdgeInsets.only(right: 10, left: 10, top: 20),
                         child: GestureDetector(
                           onTap: () {
                             Get.back();
@@ -1050,7 +1044,7 @@ class _DetailMRState extends State<DetailMR> {
                               borderRadius: BorderRadius.circular(7),
                               color: Colors.grey[100],
                             ),
-                            child: Column(
+                            child: const Column(
                               children: [
                                 Padding(
                                   padding: EdgeInsets.all(16),
@@ -1093,7 +1087,7 @@ class _DetailMRState extends State<DetailMR> {
   _onRefresh() {
     setState(() {
 // so whatever you want to refresh it must be inside the setState
-      DetailMR(); // if you only want to refresh the list you can place this, so the two can be inside setState
+      const DetailMR(); // if you only want to refresh the list you can place this, so the two can be inside setState
       _refreshController
           .refreshCompleted(); // request complete,the header will enter complete state,
 // resetFooterState : it will set the footer state from noData to idle

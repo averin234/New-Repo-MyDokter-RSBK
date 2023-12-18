@@ -30,10 +30,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RefreshConfiguration(
-        headerBuilder: () => WaterDropHeader(),        // Configure the default header indicator. If you have the same header indicator for each page, you need to set this
-    footerBuilder:  () => ClassicFooter(),        // Configure default bottom indicator
+        headerBuilder: () => const WaterDropHeader(),        // Configure the default header indicator. If you have the same header indicator for each page, you need to set this
+    footerBuilder:  () => const ClassicFooter(),        // Configure default bottom indicator
     headerTriggerDistance: 80.0,        // header trigger refresh trigger distance
-    springDescription:SpringDescription(stiffness: 170, damping: 16, mass: 1.9),         // custom spring back animate,the props meaning see the flutter api
+    springDescription:const SpringDescription(stiffness: 170, damping: 16, mass: 1.9),         // custom spring back animate,the props meaning see the flutter api
     maxOverScrollExtent :100, //The maximum dragging range of the head. Set this property if a rush out of the view area occurs
     maxUnderScrollExtent:0, // Maximum dragging range at the bottom
     enableScrollWhenRefreshCompleted: true, //This property is incompatible with PageView and TabBarView. If you need TabBarView to slide left and right, you need to set it to true.

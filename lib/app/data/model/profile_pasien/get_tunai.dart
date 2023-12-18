@@ -10,11 +10,11 @@ class GetTunai {
     code = json['code'];
     msg = json['msg'];
     pasien =
-        json['pasien'] != null ? new Pasien.fromJson(json['pasien']) : null;
+        json['pasien'] != null ? Pasien.fromJson(json['pasien']) : null;
     if (json['harga'] != null) {
       harga = <Harga>[];
       json['harga'].forEach((v) {
-        harga!.add(new Harga.fromJson(v));
+        harga!.add(Harga.fromJson(v));
       });
     }
   }
@@ -22,14 +22,14 @@ class GetTunai {
 
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['code'] = this.code;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['code'] = code;
     data['msg'] = msg;
-    if (this.pasien != null) {
-      data['pasien'] = this.pasien!.toJson();
+    if (pasien != null) {
+      data['pasien'] = pasien!.toJson();
     }
-    if (this.harga != null) {
-      data['harga'] = this.harga!.map((v) => v.toJson()).toList();
+    if (harga != null) {
+      data['harga'] = harga!.map((v) => v.toJson()).toList();
     }
     return data;
   }
@@ -38,7 +38,7 @@ class GetTunai {
 class Pasien {
   String? namaPasien;
   String? tglLhr;
-  Null? golDarah;
+  void golDarah;
   String? almtTtpPasien;
   String? noHp;
   String? jenisKelamin;
@@ -64,14 +64,14 @@ class Pasien {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['nama_pasien'] = this.namaPasien;
-    data['tgl_lhr'] = this.tglLhr;
-    data['gol_darah'] = this.golDarah;
-    data['almt_ttp_pasien'] = this.almtTtpPasien;
-    data['no_hp'] = this.noHp;
-    data['jenis_kelamin'] = this.jenisKelamin;
-    data['no_mr'] = this.noMr;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['nama_pasien'] = namaPasien;
+    data['tgl_lhr'] = tglLhr;
+    data['gol_darah'] = golDarah;
+    data['almt_ttp_pasien'] = almtTtpPasien;
+    data['no_hp'] = noHp;
+    data['jenis_kelamin'] = jenisKelamin;
+    data['no_mr'] = noMr;
     return data;
   }
 }
@@ -82,12 +82,12 @@ class Harga {
   String? statusSelesai;
   String? billRs;
   String? billDr1;
-  Null? billDr2;
-  Null? billDr3;
-  Null? billRsAskes;
-  Null? billDr1Askes;
-  Null? billDr2Askes;
-  Null? lainLain;
+  void billDr2;
+  void billDr3;
+  void billRsAskes;
+  void billDr1Askes;
+  void billDr2Askes;
+  void lainLain;
 
   Harga(
       {this.kodeBagian,
@@ -117,18 +117,18 @@ class Harga {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['kode_bagian'] = this.kodeBagian;
-    data['nama_bagian'] = this.namaBagian;
-    data['status_selesai'] = this.statusSelesai;
-    data['bill_rs'] = this.billRs;
-    data['bill_dr1'] = this.billDr1;
-    data['bill_dr2'] = this.billDr2;
-    data['bill_dr3'] = this.billDr3;
-    data['bill_rs_askes'] = this.billRsAskes;
-    data['bill_dr1_askes'] = this.billDr1Askes;
-    data['bill_dr2_askes'] = this.billDr2Askes;
-    data['lain_lain'] = this.lainLain;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['kode_bagian'] = kodeBagian;
+    data['nama_bagian'] = namaBagian;
+    data['status_selesai'] = statusSelesai;
+    data['bill_rs'] = billRs;
+    data['bill_dr1'] = billDr1;
+    data['bill_dr2'] = billDr2;
+    data['bill_dr3'] = billDr3;
+    data['bill_rs_askes'] = billRsAskes;
+    data['bill_dr1_askes'] = billDr1Askes;
+    data['bill_dr2_askes'] = billDr2Askes;
+    data['lain_lain'] = lainLain;
     return data;
   }
 }

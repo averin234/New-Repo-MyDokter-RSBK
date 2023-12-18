@@ -1,15 +1,12 @@
-import 'package:mydokter_rsbk/app/data/componen/publics.dart';
 import 'package:mydokter_rsbk/app/data/model/kelurahan.dart';
 import 'package:mydokter_rsbk/app/data/model/list_data.dart';
 import 'package:mydokter_rsbk/app/modules/registrasi_pasien/controllers/registrasi_pasien_controller.dart';
-import 'package:mydokter_rsbk/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 
 import '../../../../data/componen/fetch_data.dart';
-import '../../../loading_summer/loading_screen_animed.dart';
 
 class FormRegistrasiPasien extends StatefulWidget {
   const FormRegistrasiPasien({super.key});
@@ -75,8 +72,8 @@ class _FormRegistrasiPasienState extends State<FormRegistrasiPasien> {
                   decoration: const InputDecoration(
                     suffixIcon: Icon(Icons.drive_file_rename_outline_rounded),
                     border: OutlineInputBorder(
-                      borderRadius: const BorderRadius.all(
-                        const Radius.circular(10.0),
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(10.0),
                       ),
                       borderSide: BorderSide(
                         color: Color(0x6cc7d1db),
@@ -118,8 +115,8 @@ class _FormRegistrasiPasienState extends State<FormRegistrasiPasien> {
                   decoration: const InputDecoration(
                     suffixIcon: Icon(Icons.drive_file_rename_outline_rounded),
                     border: OutlineInputBorder(
-                      borderRadius: const BorderRadius.all(
-                        const Radius.circular(10.0),
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(10.0),
                       ),
                       borderSide: BorderSide(
                         color: Color(0x6cc7d1db),
@@ -162,8 +159,8 @@ class _FormRegistrasiPasienState extends State<FormRegistrasiPasien> {
                   decoration: const InputDecoration(
                     suffixIcon: Icon(Icons.add_card_rounded),
                     border: OutlineInputBorder(
-                      borderRadius: const BorderRadius.all(
-                        const Radius.circular(10.0),
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(10.0),
                       ),
                       borderSide: BorderSide(
                         color: Color(0x6cc7d1db),
@@ -205,8 +202,8 @@ class _FormRegistrasiPasienState extends State<FormRegistrasiPasien> {
                   decoration: const InputDecoration(
                     suffixIcon: Icon(Icons.location_city_rounded),
                     border: OutlineInputBorder(
-                      borderRadius: const BorderRadius.all(
-                        const Radius.circular(10.0),
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(10.0),
                       ),
                       borderSide: BorderSide(
                         color: Color(0x6cc7d1db),
@@ -271,8 +268,8 @@ class _FormRegistrasiPasienState extends State<FormRegistrasiPasien> {
                   },
                   decoration: const InputDecoration(
                     border: OutlineInputBorder(
-                      borderRadius: const BorderRadius.all(
-                        const Radius.circular(10.0),
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(10.0),
                       ),
                       borderSide: BorderSide(
                         color: Color(0x6cc7d1db),
@@ -316,8 +313,8 @@ class _FormRegistrasiPasienState extends State<FormRegistrasiPasien> {
                   decoration: const InputDecoration(
                     suffixIcon: Icon(Icons.location_on),
                     border: OutlineInputBorder(
-                      borderRadius: const BorderRadius.all(
-                        const Radius.circular(10.0),
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(10.0),
                       ),
                       borderSide: BorderSide(
                         color: Color(0x6cc7d1db),
@@ -551,8 +548,8 @@ class _FormRegistrasiPasienState extends State<FormRegistrasiPasien> {
                   decoration: const InputDecoration(
                     suffixIcon: Icon(Icons.phone_android_rounded),
                     border: OutlineInputBorder(
-                      borderRadius: const BorderRadius.all(
-                        const Radius.circular(10.0),
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(10.0),
                       ),
                       borderSide: BorderSide(
                         color: Color(0x6cc7d1db),
@@ -625,8 +622,8 @@ class _FormRegistrasiPasienState extends State<FormRegistrasiPasien> {
                   decoration: const InputDecoration(
                     suffixIcon: Icon(Icons.alternate_email),
                     border: OutlineInputBorder(
-                      borderRadius: const BorderRadius.all(
-                        const Radius.circular(10.0),
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(10.0),
                       ),
                       borderSide: BorderSide(
                         color: Color(0x6cc7d1db),
@@ -761,8 +758,8 @@ class _FormRegistrasiPasienState extends State<FormRegistrasiPasien> {
                   decoration: const InputDecoration(
                     suffixIcon: Icon(Icons.health_and_safety),
                     border: OutlineInputBorder(
-                      borderRadius: const BorderRadius.all(
-                        const Radius.circular(10.0),
+                      borderRadius: BorderRadius.all(
+                        Radius.circular(10.0),
                       ),
                       borderSide: BorderSide(
                         color: Color(0x6cc7d1db),
@@ -1162,7 +1159,7 @@ class AppTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.only(right: 10, left: 10),
+      margin: const EdgeInsets.only(right: 10, left: 10),
       height: Get.width / 7,
       width: Get.width / 1,
       alignment: Alignment.center,
@@ -1179,8 +1176,8 @@ class AppTextField extends StatelessWidget {
         onTap: onTextFieldTap,
         decoration: const InputDecoration(
           border: OutlineInputBorder(
-            borderRadius: const BorderRadius.all(
-              const Radius.circular(10.0),
+            borderRadius: BorderRadius.all(
+              Radius.circular(10.0),
             ),
             borderSide: BorderSide(
               color: Color(0x6cc7d1db),

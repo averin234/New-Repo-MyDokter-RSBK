@@ -6,7 +6,6 @@ import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 
 import 'package:get/get.dart';
 
-import '../controllers/riwayat_jabatan_controller.dart';
 
 class RiwayatJabatanView extends StatefulWidget {
   const RiwayatJabatanView({super.key});
@@ -34,7 +33,7 @@ class _RiwayatJabatanViewState extends State<RiwayatJabatanView> {
       floatingActionButton: FloatingActionButton(
         onPressed: () => showModalBottomSheet(
           context: context,
-          shape: RoundedRectangleBorder(
+          shape: const RoundedRectangleBorder(
             borderRadius: BorderRadius.vertical(
               top: Radius.circular(20),
             ),
@@ -42,37 +41,37 @@ class _RiwayatJabatanViewState extends State<RiwayatJabatanView> {
           builder: (context) => buildSheet(),
         ),
         elevation: 0,
+        backgroundColor: Colors.tealAccent,
+        foregroundColor: Colors.black,
         child: Container(
           height: 70,
           width: 70,
           decoration: BoxDecoration(
             color: Colors.transparent,
-            borderRadius: BorderRadius.all(Radius.circular(50)),
+            borderRadius: const BorderRadius.all(Radius.circular(50)),
             boxShadow: [
               BoxShadow(
                 color: Colors.grey.withOpacity(0.2),
                 spreadRadius: 3,
                 blurRadius: 3,
-                offset: Offset(0, 3),
+                offset: const Offset(0, 3),
               ),
             ],
           ),
-          child: Icon(Icons.add),
+          child: const Icon(Icons.add),
         ),
-        backgroundColor: Colors.tealAccent,
-        foregroundColor: Colors.black,
       ),
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
-            systemOverlayStyle: SystemUiOverlayStyle(
+            systemOverlayStyle: const SystemUiOverlayStyle(
               statusBarColor: Colors.white, // <-- SEE HERE
               statusBarIconBrightness:
                   Brightness.dark, //<-- For Android SEE HERE (dark icons)
               statusBarBrightness:
                   Brightness.light, //<-- For iOS SEE HERE (dark icons)
             ),
-            shape: RoundedRectangleBorder(
+            shape: const RoundedRectangleBorder(
               borderRadius: BorderRadius.vertical(
                 bottom: Radius.circular(10),
               ),
@@ -85,14 +84,14 @@ class _RiwayatJabatanViewState extends State<RiwayatJabatanView> {
               onPressed: () {
                 Get.back();
               },
-              icon: Icon(
+              icon: const Icon(
                 Icons.arrow_circle_left_rounded,
                 size: 40,
               ),
-              color: Color.fromARGB(255, 192, 192, 192),
+              color: const Color.fromARGB(255, 192, 192, 192),
             ),
             title:
-                Text("Riwayat Jabatan", style: TextStyle(color: Colors.black)),
+                const Text("Riwayat Jabatan", style: TextStyle(color: Colors.black)),
             bottom: AppBar(
               toolbarHeight: 0,
               automaticallyImplyLeading: false,
@@ -112,10 +111,10 @@ class _RiwayatJabatanViewState extends State<RiwayatJabatanView> {
                       ),
                     ),
                     children: <Widget>[
-                      SizedBox(
+                      const SizedBox(
                         height: 20,
                       ),
-                      CardRiwayatJabatankDokter(),
+                      const CardRiwayatJabatankDokter(),
                     ],
                   ),
                 ),
@@ -135,7 +134,7 @@ class _RiwayatJabatanViewState extends State<RiwayatJabatanView> {
         ),
         child: Column(
           children: [
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Container(
@@ -145,14 +144,14 @@ class _RiwayatJabatanViewState extends State<RiwayatJabatanView> {
                 left: Get.width / 2 - 40,
               ),
               decoration: BoxDecoration(
-                color: Color(0xFFe0e0e0),
+                color: const Color(0xFFe0e0e0),
                 borderRadius: BorderRadius.circular(10),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 25,
             ),
-            Padding(
+            const Padding(
               padding: EdgeInsets.only(left: 15),
               child: Text("Form Riwayat Jabatan",
                   style: TextStyle(
@@ -160,7 +159,7 @@ class _RiwayatJabatanViewState extends State<RiwayatJabatanView> {
                       fontSize: 16,
                       color: Colors.blue)),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Expanded(
@@ -176,36 +175,36 @@ class _RiwayatJabatanViewState extends State<RiwayatJabatanView> {
                       ),
                     ),
                     children: <Widget>[
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
-                      Padding(
+                      const Padding(
                         padding: EdgeInsets.only(left: 15),
                         child: Text("Nama Instansi *",
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                             )),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Row(
                         children: [
-                          SizedBox(
+                          const SizedBox(
                             width: 5,
                           ),
                           Expanded(
                             child: Container(
-                              margin: EdgeInsets.only(left: 10),
+                              margin: const EdgeInsets.only(left: 10),
                               decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(10),
-                                border: Border.all(color: Color(0x6cc7d1db)),
+                                border: Border.all(color: const Color(0x6cc7d1db)),
                               ),
                               child: TextFormField(
                                 keyboardType: TextInputType.text,
                                 textInputAction: TextInputAction.done,
-                                decoration: InputDecoration(
+                                decoration: const InputDecoration(
                                   border: InputBorder.none,
                                   focusedBorder: InputBorder.none,
                                   enabledBorder: InputBorder.none,
@@ -219,34 +218,34 @@ class _RiwayatJabatanViewState extends State<RiwayatJabatanView> {
                               ),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
                         ],
                       ),
-                      Padding(
+                      const Padding(
                         padding: EdgeInsets.only(left: 15),
                         child: Text("Spesialisasi *",
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                             )),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Row(
                         children: [
-                          SizedBox(
+                          const SizedBox(
                             width: 5,
                           ),
                           Expanded(
                             child: Container(
-                              padding: EdgeInsets.only(right: 10),
-                              margin: EdgeInsets.only(left: 10, right: 10),
+                              padding: const EdgeInsets.only(right: 10),
+                              margin: const EdgeInsets.only(left: 10, right: 10),
                               decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(10),
-                                border: Border.all(color: Color(0x6cc7d1db)),
+                                border: Border.all(color: const Color(0x6cc7d1db)),
                               ),
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -255,8 +254,8 @@ class _RiwayatJabatanViewState extends State<RiwayatJabatanView> {
                                   DropdownButtonHideUnderline(
                                     child: DropdownButton2(
                                       isExpanded: true,
-                                      hint: Row(
-                                        children: const [
+                                      hint: const Row(
+                                        children: [
                                           SizedBox(
                                             width: 4,
                                           ),
@@ -303,31 +302,31 @@ class _RiwayatJabatanViewState extends State<RiwayatJabatanView> {
                           ),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
-                      Padding(
+                      const Padding(
                         padding: EdgeInsets.only(left: 15),
                         child: Text("Tahun Jabatan *",
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                             )),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                       Row(
                         children: [
-                          SizedBox(
+                          const SizedBox(
                             width: 5,
                           ),
                           Expanded(
                             child: Container(
-                              margin: EdgeInsets.only(left: 10),
+                              margin: const EdgeInsets.only(left: 10),
                               decoration: BoxDecoration(
                                 color: Colors.white,
                                 borderRadius: BorderRadius.circular(10),
-                                border: Border.all(color: Color(0x6cc7d1db)),
+                                border: Border.all(color: const Color(0x6cc7d1db)),
                               ),
                               child: TextField(
                                 keyboardType: TextInputType.text,
@@ -342,7 +341,7 @@ class _RiwayatJabatanViewState extends State<RiwayatJabatanView> {
                                           2000), //DateTime.now() - not to allow to choose before today.
                                       lastDate: DateTime(2101));
                                 },
-                                decoration: InputDecoration(
+                                decoration: const InputDecoration(
                                   suffixIcon: Icon(
                                     Icons.calendar_month_rounded,
                                     color: Color(0xff4babe7),
@@ -360,12 +359,12 @@ class _RiwayatJabatanViewState extends State<RiwayatJabatanView> {
                               ),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 10,
                       ),
                     ],
@@ -373,7 +372,7 @@ class _RiwayatJabatanViewState extends State<RiwayatJabatanView> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             InkWell(
@@ -381,10 +380,10 @@ class _RiwayatJabatanViewState extends State<RiwayatJabatanView> {
                 height: 45,
                 width: 145,
                 decoration: BoxDecoration(
-                  color: Color.fromARGB(255, 56, 229, 77),
+                  color: const Color.fromARGB(255, 56, 229, 77),
                   borderRadius: BorderRadius.circular(10),
                 ),
-                child: Column(
+                child: const Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
@@ -398,7 +397,7 @@ class _RiwayatJabatanViewState extends State<RiwayatJabatanView> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
           ],

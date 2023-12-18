@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:flutter/widgets.dart';
 
 class CardRiwayatKeluargakDokter extends StatefulWidget {
   const CardRiwayatKeluargakDokter({super.key});
@@ -16,12 +13,12 @@ class _CardRiwayatKeluargakDokterState
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: EdgeInsets.all(10),
-        margin: EdgeInsets.only(left: 10, right: 10),
+        padding: const EdgeInsets.all(10),
+        margin: const EdgeInsets.only(left: 10, right: 10),
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(10),
-          border: Border.all(color: Color(0x6cc7d1db)),
+          border: Border.all(color: const Color(0x6cc7d1db)),
           boxShadow: [
             BoxShadow(
               color: const Color(0xFFe0e0e0).withOpacity(0.5),
@@ -31,7 +28,7 @@ class _CardRiwayatKeluargakDokterState
             ),
           ],
         ),
-        child: Column(
+        child: const Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [

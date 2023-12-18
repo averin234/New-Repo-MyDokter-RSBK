@@ -2,7 +2,6 @@ import 'package:mydokter_rsbk/app/data/model/get_detail_mr.dart';
 import 'package:mydokter_rsbk/app/modules/detail_antrian/views/componen/list_resep.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 import '../../../../../data/componen/fetch_data.dart';
 import '../../../../../routes/app_pages.dart';

@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:math';
 
 import 'package:mydokter_rsbk/app/data/componen/publics.dart';
 import 'package:mydokter_rsbk/app/modules/antrian_pasien/views/componen/listview_tindakan.dart';
@@ -10,9 +9,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:in_app_update/in_app_update.dart';
 import 'package:get/get.dart';
-import 'package:in_app_update/in_app_update.dart';
 import 'package:intl/intl.dart';
-import 'package:liquid_pull_to_refresh/liquid_pull_to_refresh.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 
 import '../../../data/componen/fetch_data.dart';
@@ -22,7 +19,6 @@ import '../../loading_summer/loading_profile_home.dart';
 import '../../profile/views/profile_view.dart';
 import '../../medical_record/views/tindakan_view.dart';
 import '../controllers/home_controller.dart';
-import 'componen/menu.dart';
 
 class HomeView extends GetView<HomeController> {
   const HomeView({super.key});
@@ -132,7 +128,7 @@ class HomeView extends GetView<HomeController> {
       }),
       body: Obx(() {
         return controller.currentIndex.value == 0
-            ? Home()
+            ? const Home()
             : controller.currentIndex.value == 1
                 ? const PendapatanDokterView()
                 : controller.currentIndex.value == 2
@@ -201,9 +197,9 @@ class _HomeState extends State<Home> {
   // this enable our app to able to pull down
   AppUpdateInfo? _updateInfo;
 
-  GlobalKey<ScaffoldState> _scaffoldKey = new GlobalKey();
+  final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
 
-  bool _flexibleUpdateAvailable = false;
+  final bool _flexibleUpdateAvailable = false;
 
   // Platform messages are asynchronous, so we initialize in an async method.
   Future<void> checkForUpdate() async {
@@ -239,7 +235,7 @@ class _HomeState extends State<Home> {
         body: SmartRefresher(
           controller: _refreshController,
           enablePullDown: true,
-          header: WaterDropHeader(),
+          header: const WaterDropHeader(),
           onLoading: _onLoading,
           onRefresh: _onRefresh,
           child: CustomScrollView(
@@ -339,7 +335,7 @@ class _HomeState extends State<Home> {
                                     ),
                                   ],
                                 ),
-                                Padding(
+                                const Padding(
                                   padding: EdgeInsets.only(right: 10, left: 0),
                                   child: Text(
                                     "Daftar Pasien Baru-baru ini, yang langsung dapat di tangani",
@@ -425,7 +421,7 @@ class _HomeState extends State<Home> {
   _onRefresh() {
     setState(() {
 // so whatever you want to refresh it must be inside the setState
-      Home(); // if you only want to refresh the list you can place this, so the two can be inside setState
+      const Home(); // if you only want to refresh the list you can place this, so the two can be inside setState
       _refreshController
           .refreshCompleted(); // request complete,the header will enter complete state,
 // resetFooterState : it will set the footer state from noData to idle

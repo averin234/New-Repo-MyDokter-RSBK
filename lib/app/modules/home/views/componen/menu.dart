@@ -16,14 +16,14 @@ class _MenuHomeState extends State<MenuHome> {
       crossAxisAlignment: CrossAxisAlignment.start,
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        Padding(padding: EdgeInsets.only(right: 10, left: 10),
+        const Padding(padding: EdgeInsets.only(right: 10, left: 10),
         child : Text(
           "Menu Dokter",
           style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 18),
         ),),
-        Padding(padding: EdgeInsets.only(right: 10, left: 10),
+        const Padding(padding: EdgeInsets.only(right: 10, left: 10),
         child : Text(
           "Menambahkan jadwal praktik dokter, menambahkan Pasien Baru/dan juga dapat Registrasi pasien lama",
           style: TextStyle(
@@ -31,7 +31,7 @@ class _MenuHomeState extends State<MenuHome> {
               fontWeight: FontWeight.bold,
               fontSize: 10),
         ),),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         Row(
@@ -166,7 +166,7 @@ class _MenuHomeState extends State<MenuHome> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               width: 10,
             ),
             InkWell(

@@ -67,9 +67,8 @@ class _VerifikasiAkunViewState extends State<VerifikasiAkunView> {
               onPressed: () {
               },
               style: ElevatedButton.styleFrom(
-                elevation: 0,
+                elevation: 0, backgroundColor: Colors.lightBlue,
                 shadowColor: Colors.blue,
-                primary: Colors.lightBlue,
                 minimumSize: const Size(122, 48),
                 maximumSize: const Size(122, 48),
                 shape: RoundedRectangleBorder(
@@ -85,15 +84,15 @@ class _VerifikasiAkunViewState extends State<VerifikasiAkunView> {
         elevation: 1,
         actions: [
           Padding(
-            padding: EdgeInsets.only(top: 20),
+            padding: const EdgeInsets.only(top: 20),
             child: InkWell(
               onTap: () => Get.toNamed(Routes.HOME),
-              child: Text('Lewati',
+              child: const Text('Lewati',
                   style: TextStyle(
                       fontWeight: FontWeight.bold, color: Colors.blue)),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             width: 20,
           ),
         ],
@@ -105,10 +104,10 @@ class _VerifikasiAkunViewState extends State<VerifikasiAkunView> {
           children: [
             Container(
               height: 40,
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 color: Colors.redAccent,
               ),
-              child: Padding(
+              child: const Padding(
                 padding: EdgeInsets.all(10),
                 child: TextScroll(
                   'Untuk dapat menggunakan aplikasi A-Dokter, silahkan upload SIP anda sebagai identitas dokter legal.',
@@ -124,7 +123,7 @@ class _VerifikasiAkunViewState extends State<VerifikasiAkunView> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Center(child:
@@ -132,12 +131,12 @@ class _VerifikasiAkunViewState extends State<VerifikasiAkunView> {
               'assets/images/uploaddocument.jpg',
               width: 250,
             ),),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Container(
-              padding: EdgeInsets.all(10),
-              margin: EdgeInsets.only(right: 10, left: 10),
+              padding: const EdgeInsets.all(10),
+              margin: const EdgeInsets.only(right: 10, left: 10),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(10),
@@ -152,7 +151,7 @@ class _VerifikasiAkunViewState extends State<VerifikasiAkunView> {
               ),
               child: Column(
                 children: [
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   const Padding(
@@ -263,7 +262,7 @@ class _VerifikasiAkunViewState extends State<VerifikasiAkunView> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   const Padding(
@@ -332,7 +331,7 @@ class _VerifikasiAkunViewState extends State<VerifikasiAkunView> {
                       ),
                     ),
                   ),
-                SizedBox(
+                const SizedBox(
                   height: 10,
                 ),
                 const Padding(
@@ -396,9 +395,8 @@ class _VerifikasiAkunViewState extends State<VerifikasiAkunView> {
                         selectFile();
                       },
                       style: ElevatedButton.styleFrom(
-                        elevation: 0,
+                        elevation: 0, backgroundColor: Colors.lightBlue,
                         shadowColor: Colors.blue,
-                        primary: Colors.lightBlue,
                         minimumSize: const Size(122, 48),
                         maximumSize: const Size(122, 48),
                         shape: RoundedRectangleBorder(
@@ -412,7 +410,7 @@ class _VerifikasiAkunViewState extends State<VerifikasiAkunView> {
                 ],
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
           ],

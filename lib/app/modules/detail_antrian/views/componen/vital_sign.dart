@@ -6,20 +6,19 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:pull_to_refresh/pull_to_refresh.dart';
 import '../../../../data/componen/fetch_data.dart';
 import '../../../../data/model/list_data.dart';
-import '../../../../routes/app_pages.dart';
 import '../../../loading_summer/loading_screen_animed.dart';
 import '../../controllers/detail_tindakan_controller.dart';
 import '../detail_tindakan_view.dart';
 
 class VitalSignView extends GetView<DetailTindakanController> {
   final VitalSign vitalSign;
-  VitalSignView(
+  const VitalSignView(
       {super.key,
       required this.vitalSign}); // this is our key to the scaffold widget
 
   @override
   Widget build(BuildContext context) {
-    late RefreshController _refreshController;
+    late RefreshController refreshController;
     return InkWell(
       child: Container(
         margin: const EdgeInsets.only(right: 10, left: 10),
@@ -69,7 +68,7 @@ class VitalSignView extends GetView<DetailTindakanController> {
                           top: Radius.circular(20),
                         ),
                       ),
-                      builder: (BuildContext context) => UpdateVitalSign()),
+                      builder: (BuildContext context) => const UpdateVitalSign()),
                   child: Container(
                     height: 30,
                     width: 120,
@@ -146,10 +145,10 @@ class VitalSignView extends GetView<DetailTindakanController> {
                           Text(vitalSign.tekananDarah ?? '',
                               style: const TextStyle(
                                   fontWeight: FontWeight.bold, fontSize: 14)),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
-                          Text('mmHg'),
+                          const Text('mmHg'),
                         ],
                       ),
                       const SizedBox(
@@ -168,10 +167,10 @@ class VitalSignView extends GetView<DetailTindakanController> {
                           Text(vitalSign.suhu ?? '',
                               style: const TextStyle(
                                   fontWeight: FontWeight.bold, fontSize: 14)),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
-                          Text('°/Celcius')
+                          const Text('°/Celcius')
                         ],
                       ),
                       const SizedBox(
@@ -190,10 +189,10 @@ class VitalSignView extends GetView<DetailTindakanController> {
                           Text(vitalSign.tinggiBadan ?? '',
                               style: const TextStyle(
                                   fontWeight: FontWeight.bold, fontSize: 14)),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
-                          Text('Cm')
+                          const Text('Cm')
                         ],
                       ),
                       const SizedBox(
@@ -238,10 +237,10 @@ class VitalSignView extends GetView<DetailTindakanController> {
                           Text(vitalSign.nadi ?? '',
                               style: const TextStyle(
                                   fontWeight: FontWeight.bold, fontSize: 14)),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
-                          Text('x/menit'),
+                          const Text('x/menit'),
                         ],
                       ),
                       const SizedBox(
@@ -260,10 +259,10 @@ class VitalSignView extends GetView<DetailTindakanController> {
                           Text(vitalSign.pernafasan ?? '',
                               style: const TextStyle(
                                   fontWeight: FontWeight.bold, fontSize: 14)),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
-                          Text('x/menit')
+                          const Text('x/menit')
                         ],
                       ),
                       const SizedBox(
@@ -282,10 +281,10 @@ class VitalSignView extends GetView<DetailTindakanController> {
                           Text(vitalSign.beratBadan ?? '',
                               style: const TextStyle(
                                   fontWeight: FontWeight.bold, fontSize: 14)),
-                          SizedBox(
+                          const SizedBox(
                             width: 10,
                           ),
-                          Text('kg')
+                          const Text('kg')
                         ],
                       ),
                       const SizedBox(
@@ -818,7 +817,7 @@ class _UpdateVitalSignState extends State<UpdateVitalSign> {
               onTap: () async {
                 Get.defaultDialog(
                   backgroundColor: const Color(0x00e0e0e0),
-                  content: Loading(),
+                  content: const Loading(),
                   title: '',
                   barrierDismissible: false,
                 );
@@ -839,7 +838,7 @@ class _UpdateVitalSignState extends State<UpdateVitalSign> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => DetailTindakanView()),
+                        builder: (context) => const DetailTindakanView()),
                   );
                   // Get.toNamed(
                   //     Routes.DETAIL_TINDAKAN);

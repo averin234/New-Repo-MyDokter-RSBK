@@ -1,16 +1,11 @@
 import 'package:mydokter_rsbk/app/data/model/get_pasien_by.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:search_page/search_page.dart';
 
 import '../../../../data/componen/fetch_data.dart';
 import '../../../../data/componen/publics.dart';
-import '../../../../data/model/list_data.dart';
 import '../../../regist_pasien_lama/views/componen/listview_pasien_lama.dart';
-import '../../controllers/tindakan_controller.dart';
-import 'listview_tindakan.dart';
 
 class SearchTindakanDokter extends StatefulWidget {
   const SearchTindakanDokter({super.key});
@@ -39,7 +34,7 @@ class _SearchTindakanDokterState extends State<SearchTindakanDokter> {
                       Publics.controller.getDataRegist.value.kode ?? ''),
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
-                  return Center(
+                  return const Center(
                     child: CircularProgressIndicator(),
                   );
                 } else if (snapshot.hasData && snapshot.data != null) {
