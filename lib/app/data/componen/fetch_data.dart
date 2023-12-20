@@ -115,7 +115,7 @@ class API {
   static Future<Token> getToken() async {
     var response = await Dio().post(
       _getToken,
-      data: {"KeyCode": "MeTiRs", "v": "1.0"},
+      data: {"KeyCode": "MeTiRs", "v": "2.0"},
     );
     final data = jsonDecode(response.data);
     print(data);
