@@ -300,6 +300,7 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                                             title: '',
                                             barrierDismissible: false,
                                           );
+                                          print('akses');
                                           AksesPx aksesPX =
                                               await API.getAksesPx(
                                             pass: controller
@@ -309,6 +310,7 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                                             ingetSaya:
                                                 controller.ingatSaya.value,
                                           );
+                                          print('selesai');
                                           if (aksesPX.code != 200) {
                                             Get.snackbar(
                                                 aksesPX.code.toString(),

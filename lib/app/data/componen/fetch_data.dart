@@ -98,7 +98,8 @@ class API {
   static const _editVitalSign = "$_baseUrl/edit-vital-sign.php";
   static const _getResep = "$_baseUrl/get-resep.php";
   static const _getObatTindakan = "$_baseUrl/get-obat-tindakan.php";
-  static const _postAssesmentPerawatHd = "$_baseUrl/post-assesment-perawat-hd.php";
+  static const _postAssesmentPerawatHd =
+      "$_baseUrl/post-assesment-perawat-hd.php";
   static const _getKonsultasi = "$_baseUrl/get-konsultasi.php";
   static const _getReferensi = "$_baseUrl/get-referensi.php";
   static const _getTindakan = "$_baseUrl/get-tindakan.php";
@@ -114,9 +115,10 @@ class API {
   static Future<Token> getToken() async {
     var response = await Dio().post(
       _getToken,
-      data: {"KeyCode": "MeTiRs", "v": "2.0"},
+      data: {"KeyCode": "MeTiRs", "v": "1.0"},
     );
     final data = jsonDecode(response.data);
+    print(data);
     final obj = Token.fromJson(data);
     await LocalStorages.setToken(obj);
     print(obj.toJson());
@@ -1596,7 +1598,7 @@ class API {
     print(obj.toJson());
     return obj;
   }
-  
+
   static Future<ListData> getKonsultasi({
     required String kode_dokter,
   }) async {
@@ -2025,6 +2027,7 @@ class API {
 
   static Future<AksesPx> getAksesPx(
       {required String user, required String pass, bool? ingetSaya}) async {
+    print("token");
     var token = await getToken();
     final data = {"us": user, "pw": pass};
     var response = await Dio().post(
@@ -2061,8 +2064,7 @@ class API {
         ));
       }
     }
-    print(obj.toJson());
-    print(obj.toJson());
+    print("akses px : ${obj.toJson()}");
     return obj;
   }
 

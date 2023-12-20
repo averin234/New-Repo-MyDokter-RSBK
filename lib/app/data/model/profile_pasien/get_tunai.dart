@@ -9,8 +9,7 @@ class GetTunai {
   GetTunai.fromJson(Map<String, dynamic> json) {
     code = json['code'];
     msg = json['msg'];
-    pasien =
-        json['pasien'] != null ? Pasien.fromJson(json['pasien']) : null;
+    pasien = json['pasien'] != null ? Pasien.fromJson(json['pasien']) : null;
     if (json['harga'] != null) {
       harga = <Harga>[];
       json['harga'].forEach((v) {
@@ -18,8 +17,6 @@ class GetTunai {
       });
     }
   }
-
-
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
@@ -38,7 +35,7 @@ class GetTunai {
 class Pasien {
   String? namaPasien;
   String? tglLhr;
-  void golDarah;
+  String? golDarah;
   String? almtTtpPasien;
   String? noHp;
   String? jenisKelamin;
@@ -82,12 +79,12 @@ class Harga {
   String? statusSelesai;
   String? billRs;
   String? billDr1;
-  void billDr2;
-  void billDr3;
-  void billRsAskes;
-  void billDr1Askes;
-  void billDr2Askes;
-  void lainLain;
+  String? billDr2;
+  String? billDr3;
+  String? billRsAskes;
+  String? billDr1Askes;
+  String? billDr2Askes;
+  String? lainLain;
 
   Harga(
       {this.kodeBagian,
